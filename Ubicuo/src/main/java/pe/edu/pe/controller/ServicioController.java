@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.Distrito;
@@ -18,6 +19,7 @@ import pe.edu.upc.service.ITipoServicioService;
 @RequestScoped
 public class ServicioController 
 {
+	@Inject
 	private IServicioService seservice;
 	private ITipoServicioService tisservice;
 	private IDistritoService diservice;

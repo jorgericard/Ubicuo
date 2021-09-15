@@ -5,24 +5,26 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entities.Botones;
+import pe.edu.upc.entities.Alerta;
 import pe.edu.upc.entities.Estados;
 import pe.edu.upc.entities.Usuarios;
-import pe.edu.upc.service.IBotonesService;
+import pe.edu.upc.service.IAlertaService;
 import pe.edu.upc.service.IUsuariosService;
 
 @Named
 @RequestScoped
-public class BotonesController 
+public class AlertaController 
 {
-	private IBotonesService boservice;
+	@Inject
+	private IAlertaService boservice;
 	private IUsuariosService seservice;
 	
 	//ATRIBUTOS
-	private Botones botones;
-	private List<Botones> listabotones;
+	private Alerta alerta;
+	private List<Alerta> listaalerta;
 	private Usuarios emisor;
 	private List<Usuarios> listareceptor;
 	private Usuarios receptor;
@@ -34,8 +36,8 @@ public class BotonesController
 	@PostConstruct
 	public void init()
 	{
-		this.botones=new Botones();
-		this.listabotones=new ArrayList<Botones>();
+		this.alerta=new Alerta();
+		this.listaalerta=new ArrayList<Alerta>();
 		this.emisor=new Usuarios();
 		this.listareceptor=new ArrayList<Usuarios>();
 		this.receptor=new Usuarios();
@@ -47,18 +49,18 @@ public class BotonesController
 	//METODOS PERSONALIZADOS
 	
 	//GETTERS AND SETTERS
-	public Botones getBotones() {
-		return botones;
+	public Alerta getBotones() {
+		return alerta;
 	}
-	public void setBotones(Botones botones) {
-		this.botones = botones;
+	public void setBotones(Alerta botones) {
+		this.alerta = botones;
 	}
 
-	public List<Botones> getListabotones() {
-		return listabotones;
+	public List<Alerta> getListabotones() {
+		return listaalerta;
 	}
-	public void setListabotones(List<Botones> listabotones) {
-		this.listabotones = listabotones;
+	public void setListabotones(List<Alerta> listabotones) {
+		this.listaalerta = listabotones;
 	}
 
 	public Usuarios getEmisor() {

@@ -11,17 +11,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Botones")
-public class Botones 
+@Table(name="Alerta")
+public class Alerta 
 {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Estados estado;
-	
 	@ManyToOne
 	@JoinColumn(name="usuarioemisor" ,nullable = false)
 	private Usuarios usuarioemisor;
+	
+	@ManyToOne
+	@JoinColumn(name="estado" ,nullable = false)
+	private Estados estado;
 	
 	@ManyToOne
 	@JoinColumn(name="usuarioreceptor" ,nullable = true)
@@ -30,14 +32,14 @@ public class Botones
 	private Date Ffecha;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
-	public Botones() 
+	public Alerta() 
 	{
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	//CONSTRUCTORS USING FIELDS
-	public Botones(Estados estado, Usuarios usuarioemisor, Usuarios usuarioreceptor, Date ffecha) 
+	public Alerta(Estados estado, Usuarios usuarioemisor, Usuarios usuarioreceptor, Date ffecha) 
 	{
 		super();
 		this.estado = estado;
