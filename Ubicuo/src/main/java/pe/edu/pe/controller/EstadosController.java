@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.Estados;
@@ -14,6 +15,7 @@ import pe.edu.upc.service.IEstadosService;
 @RequestScoped
 public class EstadosController 
 {
+	@Inject
 	private IEstadosService esservice;
 	
 	//ATRIBUTOS

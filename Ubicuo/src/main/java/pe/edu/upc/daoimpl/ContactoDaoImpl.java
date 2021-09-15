@@ -8,36 +8,36 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IBotonesDao;
-import pe.edu.upc.entities.Botones;
+import pe.edu.upc.dao.IContactoDao;
+import pe.edu.upc.entities.Contacto;
 
-public class BotonesDaoImpl implements IBotonesDao
+public class ContactoDaoImpl implements IContactoDao
 {
 
 	@PersistenceContext(unitName="Ubicuo")
 	private EntityManager em;
 	
 	@Transactional
-	public void insert(Botones bo) 
+	public void insert(Contacto co) 
 	{
 		try 
 		{
-			em.persist(bo);
+			em.persist(co);
 		} 
 		catch (Exception e) 
 		{
 			System.out.println("Error al insertar");
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<Botones> list() 
+	public List<Contacto> list() 
 	{
-		List<Botones> lista = new ArrayList<Botones>();
+		List<Contacto> lista = new ArrayList<Contacto>();
 		try 
 		{
-			Query q = em.createQuery("Select bo form Botones bo");
-			lista = (List<Botones>) q.getResultList();
+			Query q = em.createQuery("Select co form ListaContactos co");
+			lista = (List<Contacto>) q.getResultList();
 		} 
 		catch (Exception e) 
 		{

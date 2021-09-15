@@ -8,36 +8,36 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IListaContactosDao;
-import pe.edu.upc.entities.ListaContactos;
+import pe.edu.upc.dao.IAlertaDao;
+import pe.edu.upc.entities.Alerta;
 
-public class ListaContactosDaoImpl implements IListaContactosDao
+public class AlertaDaoImpl implements IAlertaDao
 {
 
 	@PersistenceContext(unitName="Ubicuo")
 	private EntityManager em;
 	
 	@Transactional
-	public void insert(ListaContactos li) 
+	public void insert(Alerta al) 
 	{
 		try 
 		{
-			em.persist(li);
+			em.persist(al);
 		} 
 		catch (Exception e) 
 		{
 			System.out.println("Error al insertar");
 		}
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	public List<ListaContactos> list() 
+	public List<Alerta> list() 
 	{
-		List<ListaContactos> lista = new ArrayList<ListaContactos>();
+		List<Alerta> lista = new ArrayList<Alerta>();
 		try 
 		{
-			Query q = em.createQuery("Select li form ListaContactos li");
-			lista = (List<ListaContactos>) q.getResultList();
+			Query q = em.createQuery("Select al form Botones al");
+			lista = (List<Alerta>) q.getResultList();
 		} 
 		catch (Exception e) 
 		{

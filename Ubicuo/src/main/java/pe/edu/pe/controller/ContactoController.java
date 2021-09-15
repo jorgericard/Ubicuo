@@ -5,23 +5,25 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entities.ListaContactos;
+import pe.edu.upc.entities.Contacto;
 import pe.edu.upc.entities.Usuarios;
-import pe.edu.upc.service.IListaContactosService;
+import pe.edu.upc.service.IContactoService;
 import pe.edu.upc.service.IUsuariosService;
 
 @Named
 @RequestScoped
-public class ListaContactosController 
+public class ContactoController 
 {
-	private IListaContactosService licservice;
+	@Inject
+	private IContactoService licservice;
 	private IUsuariosService usservice;
 	
 	//ATRIBUTOS
-	private ListaContactos listacontactos;
-	private List<ListaContactos> listalistacontactos;
+	private Contacto contacto;
+	private List<Contacto> listacontacto;
 	private Usuarios usuarios;
 	private List<Usuarios> listausuarios;
 	
@@ -29,8 +31,8 @@ public class ListaContactosController
 	@PostConstruct
 	public void init()
 	{
-		this.listacontactos=new ListaContactos();
-		this.listalistacontactos=new ArrayList<ListaContactos>();
+		this.contacto=new Contacto();
+		this.listacontacto=new ArrayList<Contacto>();
 		this.usuarios=new Usuarios();
 		this.listausuarios=new ArrayList<Usuarios>();
 	}
@@ -38,18 +40,18 @@ public class ListaContactosController
 	//METODOS PERSONALIZADOS
 	
 	//GETTERS AND SETTERS
-	public ListaContactos getListacontactos() {
-		return listacontactos;
+	public Contacto getListacontactos() {
+		return contacto;
 	}
-	public void setListacontactos(ListaContactos listacontactos) {
-		this.listacontactos = listacontactos;
+	public void setListacontactos(Contacto listacontactos) {
+		this.contacto = listacontactos;
 	}
 
-	public List<ListaContactos> getListalistacontactos() {
-		return listalistacontactos;
+	public List<Contacto> getListalistacontactos() {
+		return listacontacto;
 	}
-	public void setListalistacontactos(List<ListaContactos> listalistacontactos) {
-		this.listalistacontactos = listalistacontactos;
+	public void setListalistacontactos(List<Contacto> listalistacontactos) {
+		this.listacontacto = listalistacontactos;
 	}
 
 	public Usuarios getUsuarios() {
