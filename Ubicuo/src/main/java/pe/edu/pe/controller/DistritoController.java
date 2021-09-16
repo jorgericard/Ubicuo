@@ -18,7 +18,6 @@ public class DistritoController
 	@Inject
 	private IDistritoService diservice;
 	
-	
 	//ATRIBUTOS
 	private Distrito distrito;
 	List<Distrito> listadistrito;
@@ -33,23 +32,20 @@ public class DistritoController
 	}
 	
 	//METODOS PERSONALIZADOS
-	public String newDistrito() 
-	{
-        this.setDistrito(new Distrito());
-        return "distrito.xhtml";
-    }
-
-    public void insert() 
-    {
-        diservice.insert(distrito);
-        list();
-    }
-
-    public void list() 
-    {
-        listadistrito = diservice.list();
-    }
-    
+	public String newDistrito() {
+		this.setDistrito(new Distrito());
+		return "vaccination.xhtml";
+	}
+	
+	public void insert() {
+		diservice.insert(distrito);
+		list();
+	}
+	
+	public void list() {
+		// TODO Auto-generated method stub
+		listadistrito= diservice.list();
+	}
 	//GETTERS AND SETTERS
 	public Distrito getDistrito() {
 		return distrito;
@@ -57,7 +53,6 @@ public class DistritoController
 	public void setDistrito(Distrito distrito) {
 		this.distrito = distrito;
 	}
-
 	public List<Distrito> getListadistrito() {
 		return listadistrito;
 	}

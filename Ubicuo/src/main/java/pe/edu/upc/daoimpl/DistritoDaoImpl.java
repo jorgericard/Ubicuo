@@ -21,7 +21,6 @@ public class DistritoDaoImpl implements IDistritoDao
 	@Override
 	public void insert(Distrito di) 
 	{
-		
 		try 
 		{
 			em.persist(di);
@@ -39,12 +38,13 @@ public class DistritoDaoImpl implements IDistritoDao
 		List<Distrito> lista = new ArrayList<Distrito>();
 		try 
 		{
-			Query q = em.createQuery("Select d from Distrito d");
+			Query q = em.createQuery("select c from Distrito c");
 			lista = (List<Distrito>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{
-			System.out.println("Error al insertar");
+			// TODO: handle exception
+			
 		}
 		return lista;
 	}

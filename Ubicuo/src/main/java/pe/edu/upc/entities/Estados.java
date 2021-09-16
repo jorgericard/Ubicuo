@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -56,10 +54,13 @@ public class Estados
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cestados);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cestados;
+		//result = prime * result + ((nnombreestados == null) ? 0 : nnombreestados.hashCode());
+		return result;
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -69,7 +70,11 @@ public class Estados
 		if (getClass() != obj.getClass())
 			return false;
 		Estados other = (Estados) obj;
-		return cestados == other.cestados;
+		if (cestados != other.cestados)
+			return false;
+		return true;
 	}
+
+
 	
 }
