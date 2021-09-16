@@ -8,5 +8,5 @@ public interface IEstadosService
 {
 	public void insert(Estados es);
 	
-	public List<Estados> list();
+	List<Estados> list();
 }

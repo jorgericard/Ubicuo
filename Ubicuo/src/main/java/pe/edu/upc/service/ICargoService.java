@@ -8,6 +8,6 @@ public interface ICargoService
 {
 	public void insert(Cargo ca);
 	
-	public List<Cargo> list();
+	List<Cargo> list();
 	
 }
