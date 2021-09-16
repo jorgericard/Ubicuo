@@ -18,6 +18,7 @@ public class DistritoController
 	@Inject
 	private IDistritoService diservice;
 	
+	
 	//ATRIBUTOS
 	private Distrito distrito;
 	List<Distrito> listadistrito;
@@ -28,13 +29,14 @@ public class DistritoController
 	{
 		distrito=new Distrito();
 		listadistrito=new ArrayList<Distrito>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newDistrito() 
 	{
         this.setDistrito(new Distrito());
-        return "vaccination.xhtml";
+        return "distrito.xhtml";
     }
 
     public void insert() 

@@ -28,6 +28,8 @@ public class UbicacionController
 	{
 		ubicacion=new Ubicacion();
 		listaubicacion=new ArrayList<Ubicacion>();
+		
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS

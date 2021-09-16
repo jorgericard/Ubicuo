@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +12,10 @@ import javax.persistence.Table;
 public class Ubicacion 
 {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cubicacion;
+	private int cUbicacion;
 	
 	@Column(name="nlatitud" ,nullable = false ,length = 9)
 	private int nlatitud;
@@ -32,21 +31,21 @@ public class Ubicacion
 	}
 
 	//CONSTRUCTORS USING FIELDS
-	public Ubicacion(int cubicacion, int nlatitud, int nlongitud) {
+	public Ubicacion(int cUbicacion, int nlatitud, int nlongitud) {
 		super();
-		this.cubicacion = cubicacion;
+		this.cUbicacion = cUbicacion;
 		this.nlatitud = nlatitud;
 		this.nlongitud = nlongitud;
 	}
 	
 	//GETTERS AND SETTERS
-	public int getCubicacion() 
+	public int getCUbicacion() 
 	{
-		return cubicacion;
+		return cUbicacion;
 	}
-	public void setCubicacion(int cubicacion) 
+	public void setCUbicacion(int cUbicacion) 
 	{
-		this.cubicacion = cubicacion;
+		this.cUbicacion = cUbicacion;
 	}
 
 	public int getNlatitud() 
@@ -69,7 +68,12 @@ public class Ubicacion
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cubicacion);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cUbicacion;
+		/*result = prime * result + nlatitud;
+		result = prime * result + nlongitud;*/
+		return result;
 	}
 
 	@Override
@@ -81,7 +85,12 @@ public class Ubicacion
 		if (getClass() != obj.getClass())
 			return false;
 		Ubicacion other = (Ubicacion) obj;
-		return cubicacion == other.cubicacion;
+		if (cUbicacion != other.cUbicacion)
+			return false;
+		
+		return true;
 	}
+
+	
 	
 }

@@ -8,7 +8,7 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Distritos:.
+        .:Registro de  Distritos:.
     </ui:define>
 
 	<ui:define name="titleCont">
@@ -36,9 +36,9 @@
 			<p:commandButton value="Grabar"
 				actionListener="#{distritoController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listVaccination?faces-redirect=true" />
+				action="listDistrito?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listVaccination?faces-redirect=true" immediate="true"
+				action="listDistrito?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 
