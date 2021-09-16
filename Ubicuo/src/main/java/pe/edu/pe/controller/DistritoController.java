@@ -20,21 +20,22 @@ public class DistritoController
 	
 	//ATRIBUTOS
 	private Distrito distrito;
-	private List<Distrito> listadistrito;
+	List<Distrito> listadistrito;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.distrito=new Distrito();
-		this.listadistrito=new ArrayList<Distrito>();
+		distrito=new Distrito();
+		listadistrito=new ArrayList<Distrito>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newDistrito() 
 	{
         this.setDistrito(new Distrito());
-        return "vaccination.xhtml";
+        return "distrito.xhtml";
     }
 
     public void insert() 

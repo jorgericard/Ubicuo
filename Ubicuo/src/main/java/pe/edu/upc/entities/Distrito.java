@@ -1,6 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,10 +15,10 @@ public class Distrito
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cdistrito;
+	private int cDistrito;
 	
-	@Column(name="nnombredistrito" ,nullable = false ,length = 60)
-	private String nnombredistrito;
+	@Column(name="nombreDistrito" ,nullable = false ,length = 60)
+	private String nombreDistrito;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Distrito() 
@@ -29,38 +28,41 @@ public class Distrito
 	}
 	
 	//CONSTRUCTORS USING FIELDS
-	public Distrito(int cdistrito, String nnombredistrito) 
+	public Distrito(int cDistrito, String nombreDistrito) 
 	{
 		super();
-		this.cdistrito = cdistrito;
-		this.nnombredistrito = nnombredistrito;
+		this.cDistrito = cDistrito;
+		this.nombreDistrito = nombreDistrito;
 	}
 	
 	//GETTERS AND SETTERS
-	public int getCdistrito() 
+	public int getCDistrito() 
 	{
-		return cdistrito;
+		return cDistrito;
 	}
-	public void setCdistrito(int cdistrito) 
+	public void setCDistrito(int cDistrito) 
 	{
-		this.cdistrito = cdistrito;
+		this.cDistrito = cDistrito;
 	}
 	
 	public String getNnombredistrito() 
 	{
-		return nnombredistrito;
+		return nombreDistrito;
 	}
-	public void setNnombredistrito(String nnombredistrito) 
+	public void setNombredistrito(String nombreDistrito) 
 	{
-		this.nnombredistrito = nnombredistrito;
+		this.nombreDistrito = nombreDistrito;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cdistrito);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cDistrito;
+		//result = prime * result + ((nombreDistrito == null) ? 0 : nombreDistrito.hashCode());
+		return result;
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -70,7 +72,11 @@ public class Distrito
 		if (getClass() != obj.getClass())
 			return false;
 		Distrito other = (Distrito) obj;
-		return cdistrito == other.cdistrito;
+		if (cDistrito != other.cDistrito)
+			return false;		
+		return true;
 	}
+
+	
 	
 }
