@@ -13,6 +13,7 @@ import javax.persistence.Table;
 public class Distrito 
 {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cDistrito;

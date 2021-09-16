@@ -21,6 +21,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	@Override
 	public void insert(Ubicacion ub) 
 	{
+		
 		try 
 		{
 			em.persist(ub);

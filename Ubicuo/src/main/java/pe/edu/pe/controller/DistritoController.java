@@ -18,6 +18,7 @@ public class DistritoController
 	@Inject
 	private IDistritoService diservice;
 	
+	
 	//ATRIBUTOS
 	private Distrito distrito;
 	List<Distrito> listadistrito;

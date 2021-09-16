@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class Ubicacion 
 {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cUbicacion;

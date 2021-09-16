@@ -21,6 +21,7 @@ public class DistritoDaoImpl implements IDistritoDao
 	@Override
 	public void insert(Distrito di) 
 	{
+		
 		try 
 		{
 			em.persist(di);
