@@ -28,6 +28,7 @@ public class TipoUsuarioController
 	{
 		tipousuario=new TipoUsuario();
 		listatipousuario=new ArrayList<TipoUsuario>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS

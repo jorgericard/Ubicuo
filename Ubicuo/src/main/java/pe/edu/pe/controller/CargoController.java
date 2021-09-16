@@ -28,6 +28,7 @@ public class CargoController
 	{
 		cargo=new Cargo();
 		listacargo=new ArrayList<Cargo>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS

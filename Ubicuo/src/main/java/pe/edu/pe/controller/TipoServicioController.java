@@ -28,6 +28,7 @@ public class TipoServicioController
 	{
 		tiposervicio=new TipoServicio();
 		listatiposervicio=new ArrayList<TipoServicio>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS

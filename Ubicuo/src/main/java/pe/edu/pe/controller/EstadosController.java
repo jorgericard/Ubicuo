@@ -28,6 +28,7 @@ public class EstadosController
 	{
 		estados=new Estados();
 		listaestados=new ArrayList<Estados>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS

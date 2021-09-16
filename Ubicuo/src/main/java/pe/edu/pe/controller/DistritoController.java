@@ -28,6 +28,7 @@ public class DistritoController
 	{
 		distrito=new Distrito();
 		listadistrito=new ArrayList<Distrito>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
