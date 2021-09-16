@@ -14,13 +14,13 @@ public class Ubicacion
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cubicacion;
+	private int cubicacion;
 	
-	@Column(name="Nlatitud" ,nullable = false ,length = 9)
-	private int Nlatitud;
+	@Column(name="nlatitud" ,nullable = false ,length = 9)
+	private int nlatitud;
 	
-	@Column(name="longitud" ,nullable = false ,length = 9)
-	private int longitud;
+	@Column(name="nlongitud" ,nullable = false ,length = 9)
+	private int nlongitud;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Ubicacion() 
@@ -28,42 +28,41 @@ public class Ubicacion
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	//CONSTRUCTORS USING FIELDS
-	public Ubicacion(int cubicacion, int nlatitud, int longitud) 
-	{
+	public Ubicacion(int cubicacion, int nlatitud, int nlongitud) {
 		super();
-		Cubicacion = cubicacion;
-		Nlatitud = nlatitud;
-		this.longitud = longitud;
+		this.cubicacion = cubicacion;
+		this.nlatitud = nlatitud;
+		this.nlongitud = nlongitud;
 	}
 	
 	//GETTERS AND SETTERS
 	public int getCubicacion() 
 	{
-		return Cubicacion;
+		return cubicacion;
 	}
 	public void setCubicacion(int cubicacion) 
 	{
-		Cubicacion = cubicacion;
+		this.cubicacion = cubicacion;
 	}
-	
+
 	public int getNlatitud() 
 	{
-		return Nlatitud;
+		return nlatitud;
 	}
 	public void setNlatitud(int nlatitud) 
 	{
-		Nlatitud = nlatitud;
+		this.nlatitud = nlatitud;
 	}
-	
-	public int getLongitud() 
+
+	public int getNlongitud() 
 	{
-		return longitud;
+		return nlongitud;
 	}
-	public void setLongitud(int longitud) 
+	public void setNlongitud(int nlongitud) 
 	{
-		this.longitud = longitud;
+		this.nlongitud = nlongitud;
 	}
 	
 }

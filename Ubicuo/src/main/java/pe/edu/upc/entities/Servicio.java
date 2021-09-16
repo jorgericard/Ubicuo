@@ -16,7 +16,7 @@ public class Servicio
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cservicio;
+	private int cservicio;
 	
 	@Column(name="Nnumeroservicio" ,nullable = false ,length = 9)
 	private int Nnumeroservicio;
@@ -44,27 +44,27 @@ public class Servicio
 
 	//CONSTRUCTORS USING FIELDS
 	public Servicio(int cservicio, int nnumeroservicio, String nnombreservicio, String tdireccionservicio,
-			TipoServicio tiposervicio, Distrito distrito) 
-	{
+			TipoServicio tiposervicio, Distrito distrito) {
 		super();
-		Cservicio = cservicio;
+		this.cservicio = cservicio;
 		Nnumeroservicio = nnumeroservicio;
 		Nnombreservicio = nnombreservicio;
 		Tdireccionservicio = tdireccionservicio;
 		this.tiposervicio = tiposervicio;
 		this.distrito = distrito;
 	}
-
+	
 	//GETTERS AND SETTERS
+	
 	public int getCservicio() 
 	{
-		return Cservicio;
+		return cservicio;
 	}
 	public void setCservicio(int cservicio) 
 	{
-		Cservicio = cservicio;
+		this.cservicio = cservicio;
 	}
-
+	
 	public int getNnumeroservicio() 
 	{
 		return Nnumeroservicio;

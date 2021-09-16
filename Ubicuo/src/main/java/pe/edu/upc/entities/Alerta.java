@@ -17,6 +17,8 @@ public class Alerta
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int calerta;
+	
 	@ManyToOne
 	@JoinColumn(name="usuarioemisor" ,nullable = false)
 	private Usuarios usuarioemisor;
@@ -39,11 +41,11 @@ public class Alerta
 	}
 	
 	//CONSTRUCTORS USING FIELDS
-	public Alerta(Estados estado, Usuarios usuarioemisor, Usuarios usuarioreceptor, Date ffecha) 
-	{
+	public Alerta(int calerta, Usuarios usuarioemisor, Estados estado, Usuarios usuarioreceptor, Date ffecha) {
 		super();
-		this.estado = estado;
+		this.calerta = calerta;
 		this.usuarioemisor = usuarioemisor;
+		this.estado = estado;
 		this.usuarioreceptor = usuarioreceptor;
 		Ffecha = ffecha;
 	}
@@ -84,5 +86,16 @@ public class Alerta
 	{
 		Ffecha = ffecha;
 	}
+
+	public int getCalerta() 
+	{
+		return calerta;
+	}
+
+	public void setCalerta(int calerta) 
+	{
+		this.calerta = calerta;
+	}
+	
 	
 }

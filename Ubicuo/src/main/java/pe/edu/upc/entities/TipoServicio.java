@@ -14,10 +14,10 @@ public class TipoServicio
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Ctiposervicio;
+	private int ctiposervicio;
 	
-	@Column(name="Nnombretiposervicio" ,nullable = false ,length = 60)
-	private String Nnombretiposervicio;
+	@Column(name="nnombretiposervicio" ,nullable = false ,length = 60)
+	private String nnombretiposervicio;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public TipoServicio() 
@@ -30,27 +30,27 @@ public class TipoServicio
 	public TipoServicio(int ctiposervicio, String nnombretiposervicio) 
 	{
 		super();
-		Ctiposervicio = ctiposervicio;
-		Nnombretiposervicio = nnombretiposervicio;
+		this.ctiposervicio = ctiposervicio;
+		this.nnombretiposervicio = nnombretiposervicio;
 	}
-	
+
 	//GETTERS AND SETTERS
 	public int getCtiposervicio() 
 	{
-		return Ctiposervicio;
+		return ctiposervicio;
 	}
 	public void setCtiposervicio(int ctiposervicio) 
 	{
-		Ctiposervicio = ctiposervicio;
+		this.ctiposervicio = ctiposervicio;
 	}
-	
+
 	public String getNnombretiposervicio() 
 	{
-		return Nnombretiposervicio;
+		return nnombretiposervicio;
 	}
 	public void setNnombretiposervicio(String nnombretiposervicio) 
 	{
-		Nnombretiposervicio = nnombretiposervicio;
+		this.nnombretiposervicio = nnombretiposervicio;
 	}
 	
 }
