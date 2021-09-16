@@ -36,7 +36,7 @@ public class ContactoDaoImpl implements IContactoDao
 		List<Contacto> lista = new ArrayList<Contacto>();
 		try 
 		{
-			Query q = em.createQuery("Select co form ListaContactos co");
+			Query q = em.createQuery("Select co form Contacto co");
 			lista = (List<Contacto>) q.getResultList();
 		} 
 		catch (Exception e) 
