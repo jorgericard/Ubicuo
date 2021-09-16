@@ -14,10 +14,10 @@ public class Distrito
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cdistrito;
+	private int cdistrito;
 	
-	@Column(name="Nnombredistrito" ,nullable = false ,length = 60)
-	private String Nnombredistrito;
+	@Column(name="nnombredistrito" ,nullable = false ,length = 60)
+	private String nnombredistrito;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Distrito() 
@@ -30,27 +30,27 @@ public class Distrito
 	public Distrito(int cdistrito, String nnombredistrito) 
 	{
 		super();
-		Cdistrito = cdistrito;
-		Nnombredistrito = nnombredistrito;
+		this.cdistrito = cdistrito;
+		this.nnombredistrito = nnombredistrito;
 	}
 	
 	//GETTERS AND SETTERS
 	public int getCdistrito() 
 	{
-		return Cdistrito;
+		return cdistrito;
 	}
 	public void setCdistrito(int cdistrito) 
 	{
-		Cdistrito = cdistrito;
+		this.cdistrito = cdistrito;
 	}
 	
 	public String getNnombredistrito() 
 	{
-		return Nnombredistrito;
+		return nnombredistrito;
 	}
 	public void setNnombredistrito(String nnombredistrito) 
 	{
-		Nnombredistrito = nnombredistrito;
+		this.nnombredistrito = nnombredistrito;
 	}
 	
 }

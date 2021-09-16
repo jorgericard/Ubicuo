@@ -16,12 +16,12 @@ public class Contacto
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Ccontacto;
+	private int ccontacto;
 	
-	@Column(name="Nnombrecontacto" ,nullable = false ,length = 60)
-	private String Nnombrecontacto;
+	@Column(name="nnombrecontacto" ,nullable = false ,length = 60)
+	private String nnombrecontacto;
 	
-	private int Nnumerocontacto;
+	private int nnumerocontacto;
 	
 	@ManyToOne
 	@JoinColumn(name="usuario" ,nullable = true)
@@ -35,45 +35,51 @@ public class Contacto
 	}
 
 	//CONSTRUCTORS USING FIELDS
-	public Contacto(int clistacontacto, String nnombrecontacto, int nnumerocontacto, Usuarios usuario) {
+	public Contacto(int ccontacto, String nnombrecontacto, int nnumerocontacto, Usuarios usuario) 
+	{
 		super();
-		Ccontacto = clistacontacto;
-		Nnombrecontacto = nnombrecontacto;
-		Nnumerocontacto = nnumerocontacto;
+		this.ccontacto = ccontacto;
+		this.nnombrecontacto = nnombrecontacto;
+		this.nnumerocontacto = nnumerocontacto;
 		this.usuario = usuario;
 	}
 
-
 	//GETTERS AND SETTERS
-	public int getClistacontacto() {
-		return Ccontacto;
-	}
 
-	public void setClistacontacto(int clistacontacto) {
-		Ccontacto = clistacontacto;
-	}
 
-	public String getNnombrecontacto() {
-		return Nnombrecontacto;
-	}
-
-	public void setNnombrecontacto(String nnombrecontacto) {
-		Nnombrecontacto = nnombrecontacto;
-	}
-
-	public int getNnumerocontacto() {
-		return Nnumerocontacto;
-	}
-
-	public void setNnumerocontacto(int nnumerocontacto) {
-		Nnumerocontacto = nnumerocontacto;
-	}
-
-	public Usuarios getUsuario() {
+	public Usuarios getUsuario() 
+	{
 		return usuario;
 	}
+	public int getCcontacto() 
+	{
+		return ccontacto;
+	}
 
-	public void setUsuario(Usuarios usuario) {
+	public void setCcontacto(int ccontacto) 
+	{
+		this.ccontacto = ccontacto;
+	}
+	public String getNnombrecontacto() 
+	{
+		return nnombrecontacto;
+	}
+
+	public void setNnombrecontacto(String nnombrecontacto) 
+	{
+		this.nnombrecontacto = nnombrecontacto;
+	}
+	public int getNnumerocontacto() 
+	{
+		return nnumerocontacto;
+	}
+
+	public void setNnumerocontacto(int nnumerocontacto) 
+	{
+		this.nnumerocontacto = nnumerocontacto;
+	}
+	public void setUsuario(Usuarios usuario) 
+	{
 		this.usuario = usuario;
 	}
 	

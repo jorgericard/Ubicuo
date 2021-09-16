@@ -16,19 +16,19 @@ public class Usuarios
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cusuario;
+	private int cusuario;
 	
-	@Column(name="Nnombreusuario" ,nullable = false ,length = 60)
-	private String Nnombreusuario;
+	@Column(name="nnombreusuario" ,nullable = false ,length = 60)
+	private String nnombreusuario;
 	
-	@Column(name="Ccontrasenausuario" ,nullable = false ,length = 25)
-	private String Ccontrasenausuario;
+	@Column(name="ccontrasenausuario" ,nullable = false ,length = 25)
+	private String ccontrasenausuario;
 	
-	@Column(name="Tcorreousuario" ,nullable = false ,length = 60)
-	private String Tcorreousuario;
+	@Column(name="tcorreousuario" ,nullable = false ,length = 60)
+	private String tcorreousuario;
 	
-	@Column(name="Cdniusuario" ,nullable = false ,length = 8)
-	private int Cdniusuario;
+	@Column(name="cdniusuario" ,nullable = false ,length = 8)
+	private int cdniusuario;
 	
 	@ManyToOne
 	@JoinColumn(name="tipousuario" ,nullable = false)
@@ -52,100 +52,93 @@ public class Usuarios
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	//CONSTRUCTORS USING FIELDS
 	
+	//CONSTRUCTORS USING FIELDS
 	public Usuarios(int cusuario, String nnombreusuario, String ccontrasenausuario, String tcorreousuario,
-			int cdniusuario, TipoUsuario tipousuario, Cargo cargo, Servicio servicio, Ubicacion ubicacion) {
+			int cdniusuario, TipoUsuario tipousuario, Cargo cargo, Servicio servicio, Ubicacion ubicacion) 
+	{
 		super();
-		Cusuario = cusuario;
-		Nnombreusuario = nnombreusuario;
-		Ccontrasenausuario = ccontrasenausuario;
-		Tcorreousuario = tcorreousuario;
-		Cdniusuario = cdniusuario;
+		this.cusuario = cusuario;
+		this.nnombreusuario = nnombreusuario;
+		this.ccontrasenausuario = ccontrasenausuario;
+		this.tcorreousuario = tcorreousuario;
+		this.cdniusuario = cdniusuario;
 		this.tipousuario = tipousuario;
 		this.cargo = cargo;
 		this.servicio = servicio;
 		this.ubicacion = ubicacion;
 	}
 
+
 	//GETTERS AND SETTERS
-	public int getCusuario() 
-	{
-		return Cusuario;
-	}
-	public void setCusuario(int cusuario) 
-	{
-		Cusuario = cusuario;
+	public int getCusuario() {
+		return cusuario;
 	}
 
-	public String getNnombreusuario() 
-	{
-		return Nnombreusuario;
-	}
-	public void setNnombreusuario(String nnombreusuario) 
-	{
-		Nnombreusuario = nnombreusuario;
+	public void setCusuario(int cusuario) {
+		this.cusuario = cusuario;
 	}
 
-	public String getCcontrasenausuario() 
-	{
-		return Ccontrasenausuario;
-	}
-	public void setCcontrasenausuario(String ccontrasenausuario) 
-	{
-		Ccontrasenausuario = ccontrasenausuario;
+	public String getNnombreusuario() {
+		return nnombreusuario;
 	}
 
-	public String getTcorreousuario() 
-	{
-		return Tcorreousuario;
-	}
-	public void setTcorreousuario(String tcorreousuario) 
-	{
-		Tcorreousuario = tcorreousuario;
+	public void setNnombreusuario(String nnombreusuario) {
+		this.nnombreusuario = nnombreusuario;
 	}
 
-	public int getCdniusuario() 
-	{
-		return Cdniusuario;
-	}
-	public void setCdniusuario(int cdniusuario) 
-	{
-		Cdniusuario = cdniusuario;
+	public String getCcontrasenausuario() {
+		return ccontrasenausuario;
 	}
 
-	public TipoUsuario getTipousuario() 
-	{
+	public void setCcontrasenausuario(String ccontrasenausuario) {
+		this.ccontrasenausuario = ccontrasenausuario;
+	}
+
+	public String getTcorreousuario() {
+		return tcorreousuario;
+	}
+
+	public void setTcorreousuario(String tcorreousuario) {
+		this.tcorreousuario = tcorreousuario;
+	}
+
+	public int getCdniusuario() {
+		return cdniusuario;
+	}
+
+	public void setCdniusuario(int cdniusuario) {
+		this.cdniusuario = cdniusuario;
+	}
+
+	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
-	public void setTipousuario(TipoUsuario tipousuario) 
-	{
+
+	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
 
-	public Cargo getCargo() 
-	{
+	public Cargo getCargo() {
 		return cargo;
 	}
-	public void setCargo(Cargo cargo) 
-	{
+
+	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 
-	public Servicio getServicio() 
-	{
+	public Servicio getServicio() {
 		return servicio;
 	}
-	public void setServicio(Servicio servicio) 
-	{
+
+	public void setServicio(Servicio servicio) {
 		this.servicio = servicio;
 	}
 
-	public Ubicacion getUbicacion() 
-	{
+	public Ubicacion getUbicacion() {
 		return ubicacion;
 	}
+
 	public void setUbicacion(Ubicacion ubicacion) {
 		this.ubicacion = ubicacion;
 	}
