@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -57,10 +55,13 @@ public class TipoServicio
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ctiposervicio);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ctiposervicio;
+		//result = prime * result + ((nnombretiposervicio == null) ? 0 : nnombretiposervicio.hashCode());
+		return result;
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -70,7 +71,11 @@ public class TipoServicio
 		if (getClass() != obj.getClass())
 			return false;
 		TipoServicio other = (TipoServicio) obj;
-		return ctiposervicio == other.ctiposervicio;
+		if (ctiposervicio != other.ctiposervicio)
+			return false;
+		return true;
 	}
+
+	
 	
 }

@@ -1,6 +1,5 @@
 package pe.edu.upc.entities;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,6 @@ import javax.persistence.Table;
 @Table(name="Distrito")
 public class Distrito 
 {
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,7 +44,7 @@ public class Distrito
 		this.cDistrito = cDistrito;
 	}
 	
-	public String getNnombredistrito() 
+	public String getNombredistrito() 
 	{
 		return nombreDistrito;
 	}
@@ -60,7 +58,7 @@ public class Distrito
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + cDistrito;
-		//result = prime * result + ((nombreDistrito == null) ? 0 : nombreDistrito.hashCode());
+		//result = prime * result + ((Nnombredistrito == null) ? 0 : Nnombredistrito.hashCode());
 		return result;
 	}
 
@@ -74,10 +72,9 @@ public class Distrito
 			return false;
 		Distrito other = (Distrito) obj;
 		if (cDistrito != other.cDistrito)
-			return false;		
+			return false;
+		
 		return true;
 	}
-
-	
 	
 }
