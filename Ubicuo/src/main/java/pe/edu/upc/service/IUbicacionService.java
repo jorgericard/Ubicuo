@@ -8,5 +8,5 @@ public interface IUbicacionService
 {
 	public void insert(Ubicacion ub);
 	
-	public List<Ubicacion> list();
+	List<Ubicacion> list();
 }

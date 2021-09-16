@@ -8,5 +8,5 @@ public interface ITipoUsuarioService
 {
 	public void insert(TipoUsuario tiu);
 	
-	public List<TipoUsuario> list();
+	List<TipoUsuario> list();
 }

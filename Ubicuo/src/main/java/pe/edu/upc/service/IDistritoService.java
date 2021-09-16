@@ -8,5 +8,5 @@ public interface IDistritoService
 {
 	public void insert(Distrito di);
 	
-	public List<Distrito> list();
+	List<Distrito> list();
 }
