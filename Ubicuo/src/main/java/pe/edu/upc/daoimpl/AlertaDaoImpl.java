@@ -18,6 +18,7 @@ public class AlertaDaoImpl implements IAlertaDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Alerta al) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class AlertaDaoImpl implements IAlertaDao
 	}
 	
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Alerta> list() 
 	{
 		List<Alerta> lista = new ArrayList<Alerta>();

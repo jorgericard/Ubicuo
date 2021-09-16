@@ -31,7 +31,23 @@ public class CargoController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newCargo() 
+	{
+        this.setCargo(new Cargo());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        caservice.insert(cargo);
+        list();
+    }
+
+    public void list() 
+    {
+        listacargo = caservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public Cargo getCargo() {
 		return cargo;

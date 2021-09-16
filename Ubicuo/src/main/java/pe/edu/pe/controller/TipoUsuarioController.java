@@ -31,7 +31,22 @@ public class TipoUsuarioController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newTipoUsuario() 
+	{
+        this.setTipousuario(new TipoUsuario());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        tiuservice.insert(tipousuario);
+        list();
+    }
+
+    public void list() 
+    {
+        listatipousuario = tiuservice.list();
+    }
 	
 	//GETTERS AND SETTERS
 	public TipoUsuario getTipousuario() 

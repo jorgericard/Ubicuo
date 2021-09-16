@@ -18,6 +18,7 @@ public class ServicioDaoImpl implements IServicioDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Servicio se) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class ServicioDaoImpl implements IServicioDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Servicio> list() 
 	{
 		List<Servicio> lista = new ArrayList<Servicio>();

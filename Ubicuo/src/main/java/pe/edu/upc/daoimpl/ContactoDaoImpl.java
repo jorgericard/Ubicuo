@@ -18,6 +18,7 @@ public class ContactoDaoImpl implements IContactoDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Contacto co) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class ContactoDaoImpl implements IContactoDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Contacto> list() 
 	{
 		List<Contacto> lista = new ArrayList<Contacto>();

@@ -18,6 +18,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(TipoUsuario tiu) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<TipoUsuario> list() 
 	{
 		List<TipoUsuario> lista = new ArrayList<TipoUsuario>();
