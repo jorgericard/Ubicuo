@@ -31,7 +31,23 @@ public class EstadosController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newEstado() 
+	{
+        this.setEstados(new Estados());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        esservice.insert(estados);
+        list();
+    }
+
+    public void list() 
+    {
+        listaestados = esservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public Estados getEstados() {
 		return estados;

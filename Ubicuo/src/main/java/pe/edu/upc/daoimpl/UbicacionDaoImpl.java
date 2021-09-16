@@ -18,6 +18,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Ubicacion ub) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Ubicacion> list() 
 	{
 		List<Ubicacion> lista = new ArrayList<Ubicacion>();

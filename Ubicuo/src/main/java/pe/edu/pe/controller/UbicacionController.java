@@ -31,7 +31,22 @@ public class UbicacionController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newUbicacion() 
+	{
+        this.setUbicacion(new Ubicacion());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        ubservice.insert(ubicacion);
+        list();
+    }
+
+    public void list() 
+    {
+        listaubicacion = ubservice.list();
+    }
 
 	//GETTERS AND SETTERS
 	public Ubicacion getUbicacion() {

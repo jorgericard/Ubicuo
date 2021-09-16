@@ -18,6 +18,7 @@ public class DistritoDaoImpl implements IDistritoDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Distrito di) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class DistritoDaoImpl implements IDistritoDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Distrito> list() 
 	{
 		List<Distrito> lista = new ArrayList<Distrito>();

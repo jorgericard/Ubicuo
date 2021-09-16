@@ -31,7 +31,23 @@ public class TipoServicioController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newTipoServicio() 
+	{
+        this.setTiposervicio(new TipoServicio());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        tisservice.insert(tiposervicio);
+        list();
+    }
+
+    public void list() 
+    {
+        listatiposervicio = tisservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public TipoServicio getTiposervicio() {
 		return tiposervicio;

@@ -31,7 +31,23 @@ public class DistritoController
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newDistrito() 
+	{
+        this.setDistrito(new Distrito());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        diservice.insert(distrito);
+        list();
+    }
+
+    public void list() 
+    {
+        listadistrito = diservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public Distrito getDistrito() {
 		return distrito;
