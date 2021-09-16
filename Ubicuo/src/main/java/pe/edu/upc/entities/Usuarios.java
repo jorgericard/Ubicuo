@@ -1,5 +1,7 @@
 package pe.edu.upc.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -141,6 +143,25 @@ public class Usuarios
 
 	public void setUbicacion(Ubicacion ubicacion) {
 		this.ubicacion = ubicacion;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cusuario);
+	}
+
+
+	//SOURCE>GENERATE DASH CODE AND EQUALS
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuarios other = (Usuarios) obj;
+		return cusuario == other.cusuario;
 	}
 	
 }

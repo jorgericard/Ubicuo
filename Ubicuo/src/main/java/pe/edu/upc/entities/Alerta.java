@@ -1,6 +1,7 @@
 package pe.edu.upc.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Alerta
 	@JoinColumn(name="usuarioreceptor" ,nullable = true)
 	private Usuarios usuarioreceptor;
 	
-	private Date Ffecha;
+	private Date ffecha;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Alerta() 
@@ -47,7 +48,7 @@ public class Alerta
 		this.usuarioemisor = usuarioemisor;
 		this.estado = estado;
 		this.usuarioreceptor = usuarioreceptor;
-		Ffecha = ffecha;
+		this.ffecha = ffecha;
 	}
 	
 	//GETTERS AND SETTERS
@@ -78,13 +79,14 @@ public class Alerta
 		this.usuarioreceptor = usuarioreceptor;
 	}
 	
+
 	public Date getFfecha() 
 	{
-		return Ffecha;
+		return ffecha;
 	}
 	public void setFfecha(Date ffecha) 
 	{
-		Ffecha = ffecha;
+		this.ffecha = ffecha;
 	}
 
 	public int getCalerta() 
@@ -96,6 +98,23 @@ public class Alerta
 	{
 		this.calerta = calerta;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(calerta);
+	}
+
+	//SOURCE>GENERATE DASH CODE AND EQUALS
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alerta other = (Alerta) obj;
+		return calerta == other.calerta;
+	}
 	
 }

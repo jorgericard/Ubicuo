@@ -1,5 +1,7 @@
 package pe.edu.upc.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +53,24 @@ public class Cargo
 	public void setNnombrecargo(String nnombrecargo) 
 	{
 		this.nnombrecargo = nnombrecargo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ccargo);
+	}
+
+	//SOURCE>GENERATE DASH CODE AND EQUALS
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cargo other = (Cargo) obj;
+		return ccargo == other.ccargo;
 	}
 	
 }
