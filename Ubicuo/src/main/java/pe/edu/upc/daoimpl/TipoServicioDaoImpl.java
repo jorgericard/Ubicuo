@@ -39,7 +39,7 @@ public class TipoServicioDaoImpl implements ITipoServicioDao
 		try 
 		{
 			Query q = em.createQuery("Select tis from TipoServicio tis");
-			lista = (List<TipoServicio>) q.getResultList();
+			lista = (List<TipoServicio>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

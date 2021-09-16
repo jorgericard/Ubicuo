@@ -39,7 +39,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 		try 
 		{
 			Query q = em.createQuery("Select ub form Ubicacion ub");
-			lista = (List<Ubicacion>) q.getResultList();
+			lista = (List<Ubicacion>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

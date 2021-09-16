@@ -59,7 +59,6 @@ public class TipoUsuario
 		return Objects.hash(ctipousuario);
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,5 +70,6 @@ public class TipoUsuario
 		TipoUsuario other = (TipoUsuario) obj;
 		return ctipousuario == other.ctipousuario;
 	}
+	
 	
 }

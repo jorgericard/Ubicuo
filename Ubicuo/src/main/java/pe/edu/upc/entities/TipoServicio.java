@@ -60,7 +60,6 @@ public class TipoServicio
 		return Objects.hash(ctiposervicio);
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -59,7 +59,6 @@ public class Estados
 		return Objects.hash(cestados);
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

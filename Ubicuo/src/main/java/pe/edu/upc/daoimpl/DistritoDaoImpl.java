@@ -39,7 +39,7 @@ public class DistritoDaoImpl implements IDistritoDao
 		try 
 		{
 			Query q = em.createQuery("Select di from Distrito di");
-			lista = (List<Distrito>) q.getResultList();
+			lista = (List<Distrito>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{
