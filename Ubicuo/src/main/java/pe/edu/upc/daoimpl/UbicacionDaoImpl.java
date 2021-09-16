@@ -21,6 +21,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	@Override
 	public void insert(Ubicacion ub) 
 	{
+		
 		try 
 		{
 			em.persist(ub);
@@ -38,8 +39,8 @@ public class UbicacionDaoImpl implements IUbicacionDao
 		List<Ubicacion> lista = new ArrayList<Ubicacion>();
 		try 
 		{
-			Query q = em.createQuery("Select ub form Ubicacion ub");
-			lista = (List<Ubicacion>) q.getResultList();
+			Query q = em.createQuery("Select u from Ubicacion u");
+			lista = (List<Ubicacion>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{
