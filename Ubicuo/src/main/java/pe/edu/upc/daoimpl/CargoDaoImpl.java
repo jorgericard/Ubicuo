@@ -36,7 +36,7 @@ public class CargoDaoImpl implements ICargoDao
 		List<Cargo> lista = new ArrayList<Cargo>();
 		try 
 		{
-			Query q = em.createQuery("Select ca form Cargo ca");
+			Query q = em.createQuery("Select ca from Cargo ca");
 			lista = (List<Cargo>) q.getResultList();
 		} 
 		catch (Exception e) 

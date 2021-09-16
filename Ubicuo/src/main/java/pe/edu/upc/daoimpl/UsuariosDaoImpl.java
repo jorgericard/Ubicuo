@@ -36,7 +36,7 @@ public class UsuariosDaoImpl implements IUsuariosDao
 		List<Usuarios> lista = new ArrayList<Usuarios>();
 		try 
 		{
-			Query q = em.createQuery("Select us form Usuarios us");
+			Query q = em.createQuery("Select us from Usuarios us");
 			lista = (List<Usuarios>) q.getResultList();
 		} 
 		catch (Exception e) 

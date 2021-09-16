@@ -36,7 +36,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
 		List<TipoUsuario> lista = new ArrayList<TipoUsuario>();
 		try 
 		{
-			Query q = em.createQuery("Select tiu form TipoUsuario tiu");
+			Query q = em.createQuery("Select tiu from TipoUsuario tiu");
 			lista = (List<TipoUsuario>) q.getResultList();
 		} 
 		catch (Exception e) 
