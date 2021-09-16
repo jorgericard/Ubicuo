@@ -20,14 +20,14 @@ public class UbicacionController
 	
 	//ATRIBUTOS
 	private Ubicacion ubicacion; 
-	private List<Ubicacion> listaubicacion;
+	List<Ubicacion> listaubicacion;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.ubicacion=new Ubicacion();
-		this.listaubicacion=new ArrayList<Ubicacion>();
+		ubicacion=new Ubicacion();
+		listaubicacion=new ArrayList<Ubicacion>();
 	}
 	
 	//METODOS PERSONALIZADOS

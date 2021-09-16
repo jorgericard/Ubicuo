@@ -20,14 +20,14 @@ public class EstadosController
 	
 	//ATRIBUTOS
 	private Estados estados;
-	private List<Estados> listaestados;
+	List<Estados> listaestados;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.estados=new Estados();
-		this.listaestados=new ArrayList<Estados>();
+		estados=new Estados();
+		listaestados=new ArrayList<Estados>();
 	}
 	
 	//METODOS PERSONALIZADOS
