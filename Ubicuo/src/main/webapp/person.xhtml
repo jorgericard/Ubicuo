@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Estados:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Estados</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="cestados" value="Estados"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="cestados"
+				styleClass="form-control"
+				value="#{EstadosController.estado.cestados}" required="true" />
+
+
+
+			<h:outputLabel for="nnombreestados" value="Nombre de Estado"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nnombreestados" styleClass="form-control"
+				value="#{EstadosController.estado.nnombreestados}" maxlength="45"
+				required="true" />
+			<br />
+
+			<h:outputLabel for="cestados" value="Estados"
+				styleClass="control-label" />
+			<p:selectOneMenu id="Estados"
+				value="#{EstadosController.estados.listaestados}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{EstdosController.listaestados}" var="v"
+					itemLabel="#{v.nnombreestados}" itemValue="#{v}" />
+
+			</p:selectOneMenu>
+
+
+			<br />
+
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{personController.insertPerson()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listPerson?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listPerson?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
