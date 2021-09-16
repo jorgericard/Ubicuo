@@ -18,6 +18,7 @@ public class EstadosDaoImpl implements IEstadosDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Estados es) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class EstadosDaoImpl implements IEstadosDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Estados> list() 
 	{
 		List<Estados> lista = new ArrayList<Estados>();

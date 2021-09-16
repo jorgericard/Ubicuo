@@ -18,6 +18,7 @@ public class CargoDaoImpl implements ICargoDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Cargo ca) 
 	{
 		try 
@@ -31,6 +32,7 @@ public class CargoDaoImpl implements ICargoDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Cargo> list() 
 	{
 		List<Cargo> lista = new ArrayList<Cargo>();

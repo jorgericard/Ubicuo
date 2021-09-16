@@ -18,8 +18,10 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Ubicacion ub) 
 	{
+		
 		try 
 		{
 			em.persist(ub);
@@ -31,13 +33,14 @@ public class UbicacionDaoImpl implements IUbicacionDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Ubicacion> list() 
 	{
 		List<Ubicacion> lista = new ArrayList<Ubicacion>();
 		try 
 		{
-			Query q = em.createQuery("Select ub form Ubicacion ub");
-			lista = (List<Ubicacion>) q.getResultList();
+			Query q = em.createQuery("Select u from Ubicacion u");
+			lista = (List<Ubicacion>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

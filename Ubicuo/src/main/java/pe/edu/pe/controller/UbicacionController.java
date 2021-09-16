@@ -20,18 +20,35 @@ public class UbicacionController
 	
 	//ATRIBUTOS
 	private Ubicacion ubicacion; 
-	private List<Ubicacion> listaubicacion;
+	List<Ubicacion> listaubicacion;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.ubicacion=new Ubicacion();
-		this.listaubicacion=new ArrayList<Ubicacion>();
+		ubicacion=new Ubicacion();
+		listaubicacion=new ArrayList<Ubicacion>();
+		
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newUbicacion() 
+	{
+        this.setUbicacion(new Ubicacion());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        ubservice.insert(ubicacion);
+        list();
+    }
+
+    public void list() 
+    {
+        listaubicacion = ubservice.list();
+    }
 
 	//GETTERS AND SETTERS
 	public Ubicacion getUbicacion() {

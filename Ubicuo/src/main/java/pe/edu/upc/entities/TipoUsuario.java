@@ -1,5 +1,7 @@
 package pe.edu.upc.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +16,10 @@ public class TipoUsuario
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Ctipousuario;
+	private int ctipousuario;
 	
-	@Column(name="Nnombretipo" ,nullable = false ,length = 60)
-	private String Nnombretipo;
+	@Column(name="nnombretipo" ,nullable = false ,length = 60)
+	private String nnombretipo;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public TipoUsuario() 
@@ -27,30 +29,47 @@ public class TipoUsuario
 	}
 
 	//CONSTRUCTORS USING FIELDS
-	public TipoUsuario(int ctipousuario, String nnombretipo) 
-	{
+	public TipoUsuario(int ctipousuario, String nnombretipo) {
 		super();
-		Ctipousuario = ctipousuario;
-		Nnombretipo = nnombretipo;
+		this.ctipousuario = ctipousuario;
+		this.nnombretipo = nnombretipo;
 	}
-
+	
 	//GETTERS AND SETTERS
 	public int getCtipousuario() 
 	{
-		return Ctipousuario;
+		return ctipousuario;
 	}
 	public void setCtipousuario(int ctipousuario) 
 	{
-		Ctipousuario = ctipousuario;
+		this.ctipousuario = ctipousuario;
 	}
 
 	public String getNnombretipo() 
 	{
-		return Nnombretipo;
+		return nnombretipo;
 	}
 	public void setNnombretipo(String nnombretipo) 
 	{
-		Nnombretipo = nnombretipo;
+		this.nnombretipo = nnombretipo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ctipousuario);
+	}
+
+	//SOURCE>GENERATE DASH CODE AND EQUALS
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TipoUsuario other = (TipoUsuario) obj;
+		return ctipousuario == other.ctipousuario;
 	}
 	
 }

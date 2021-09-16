@@ -20,18 +20,34 @@ public class EstadosController
 	
 	//ATRIBUTOS
 	private Estados estados;
-	private List<Estados> listaestados;
+	List<Estados> listaestados;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.estados=new Estados();
-		this.listaestados=new ArrayList<Estados>();
+		estados=new Estados();
+		listaestados=new ArrayList<Estados>();
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newEstado() 
+	{
+        this.setEstados(new Estados());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        esservice.insert(estados);
+        list();
+    }
+
+    public void list() 
+    {
+        listaestados = esservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public Estados getEstados() {
 		return estados;

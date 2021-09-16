@@ -20,18 +20,34 @@ public class TipoServicioController
 	
 	//ATRIBUTOS
 	private TipoServicio tiposervicio;
-	private List<TipoServicio> listatiposervicio;
+	List<TipoServicio> listatiposervicio;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.tiposervicio=new TipoServicio();
-		this.listatiposervicio=new ArrayList<TipoServicio>();
+		tiposervicio=new TipoServicio();
+		listatiposervicio=new ArrayList<TipoServicio>();
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newTipoServicio() 
+	{
+        this.setTiposervicio(new TipoServicio());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        tisservice.insert(tiposervicio);
+        list();
+    }
+
+    public void list() 
+    {
+        listatiposervicio = tisservice.list();
+    }
+    
 	//GETTERS AND SETTERS
 	public TipoServicio getTiposervicio() {
 		return tiposervicio;

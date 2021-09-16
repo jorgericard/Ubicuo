@@ -20,18 +20,33 @@ public class TipoUsuarioController
 	
 	//ATRIBUTOS
 	private TipoUsuario tipousuario;
-	private List<TipoUsuario> listatipousuario;
+	List<TipoUsuario> listatipousuario;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.tipousuario=new TipoUsuario();
-		this.listatipousuario=new ArrayList<TipoUsuario>();
+		tipousuario=new TipoUsuario();
+		listatipousuario=new ArrayList<TipoUsuario>();
 	}
 	
 	//METODOS PERSONALIZADOS
-	
+	public String newTipoUsuario() 
+	{
+        this.setTipousuario(new TipoUsuario());
+        return "vaccination.xhtml";
+    }
+
+    public void insert() 
+    {
+        tiuservice.insert(tipousuario);
+        list();
+    }
+
+    public void list() 
+    {
+        listatipousuario = tiuservice.list();
+    }
 	
 	//GETTERS AND SETTERS
 	public TipoUsuario getTipousuario() 

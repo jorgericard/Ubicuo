@@ -18,8 +18,10 @@ public class DistritoDaoImpl implements IDistritoDao
 	private EntityManager em;
 	
 	@Transactional
+	@Override
 	public void insert(Distrito di) 
 	{
+		
 		try 
 		{
 			em.persist(di);
@@ -31,13 +33,14 @@ public class DistritoDaoImpl implements IDistritoDao
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Distrito> list() 
 	{
 		List<Distrito> lista = new ArrayList<Distrito>();
 		try 
 		{
-			Query q = em.createQuery("Select di from Distrito di");
-			lista = (List<Distrito>) q.getResultList();
+			Query q = em.createQuery("Select d from Distrito d");
+			lista = (List<Distrito>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

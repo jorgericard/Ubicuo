@@ -12,15 +12,16 @@ import javax.persistence.Table;
 public class Ubicacion 
 {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cubicacion;
+	private int cUbicacion;
 	
-	@Column(name="Nlatitud" ,nullable = false ,length = 9)
-	private int Nlatitud;
+	@Column(name="nlatitud" ,nullable = false ,length = 9)
+	private int nlatitud;
 	
-	@Column(name="longitud" ,nullable = false ,length = 9)
-	private int longitud;
+	@Column(name="nlongitud" ,nullable = false ,length = 9)
+	private int nlongitud;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Ubicacion() 
@@ -28,42 +29,68 @@ public class Ubicacion
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	//CONSTRUCTORS USING FIELDS
-	public Ubicacion(int cubicacion, int nlatitud, int longitud) 
-	{
+	public Ubicacion(int cUbicacion, int nlatitud, int nlongitud) {
 		super();
-		Cubicacion = cubicacion;
-		Nlatitud = nlatitud;
-		this.longitud = longitud;
+		this.cUbicacion = cUbicacion;
+		this.nlatitud = nlatitud;
+		this.nlongitud = nlongitud;
 	}
 	
 	//GETTERS AND SETTERS
-	public int getCubicacion() 
+	public int getCUbicacion() 
 	{
-		return Cubicacion;
+		return cUbicacion;
 	}
-	public void setCubicacion(int cubicacion) 
+	public void setCUbicacion(int cUbicacion) 
 	{
-		Cubicacion = cubicacion;
+		this.cUbicacion = cUbicacion;
 	}
-	
+
 	public int getNlatitud() 
 	{
-		return Nlatitud;
+		return nlatitud;
 	}
 	public void setNlatitud(int nlatitud) 
 	{
-		Nlatitud = nlatitud;
+		this.nlatitud = nlatitud;
 	}
+
+	public int getNlongitud() 
+	{
+		return nlongitud;
+	}
+	public void setNlongitud(int nlongitud) 
+	{
+		this.nlongitud = nlongitud;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cUbicacion;
+		/*result = prime * result + nlatitud;
+		result = prime * result + nlongitud;*/
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ubicacion other = (Ubicacion) obj;
+		if (cUbicacion != other.cUbicacion)
+			return false;
+		
+		return true;
+	}
+
 	
-	public int getLongitud() 
-	{
-		return longitud;
-	}
-	public void setLongitud(int longitud) 
-	{
-		this.longitud = longitud;
-	}
 	
 }

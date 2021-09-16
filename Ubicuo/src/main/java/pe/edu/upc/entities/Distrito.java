@@ -1,5 +1,6 @@
 package pe.edu.upc.entities;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,12 +13,13 @@ import javax.persistence.Table;
 public class Distrito 
 {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cdistrito;
+	private int cDistrito;
 	
-	@Column(name="Nnombredistrito" ,nullable = false ,length = 60)
-	private String Nnombredistrito;
+	@Column(name="nombreDistrito" ,nullable = false ,length = 60)
+	private String nombreDistrito;
 	
 	//CONSTRUCTORS FROM SUPERCLASS
 	public Distrito() 
@@ -27,30 +29,55 @@ public class Distrito
 	}
 	
 	//CONSTRUCTORS USING FIELDS
-	public Distrito(int cdistrito, String nnombredistrito) 
+	public Distrito(int cDistrito, String nombreDistrito) 
 	{
 		super();
-		Cdistrito = cdistrito;
-		Nnombredistrito = nnombredistrito;
+		this.cDistrito = cDistrito;
+		this.nombreDistrito = nombreDistrito;
 	}
 	
 	//GETTERS AND SETTERS
-	public int getCdistrito() 
+	public int getCDistrito() 
 	{
-		return Cdistrito;
+		return cDistrito;
 	}
-	public void setCdistrito(int cdistrito) 
+	public void setCDistrito(int cDistrito) 
 	{
-		Cdistrito = cdistrito;
+		this.cDistrito = cDistrito;
 	}
 	
 	public String getNnombredistrito() 
 	{
-		return Nnombredistrito;
+		return nombreDistrito;
 	}
-	public void setNnombredistrito(String nnombredistrito) 
+	public void setNombredistrito(String nombreDistrito) 
 	{
-		Nnombredistrito = nnombredistrito;
+		this.nombreDistrito = nombreDistrito;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cDistrito;
+		//result = prime * result + ((nombreDistrito == null) ? 0 : nombreDistrito.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Distrito other = (Distrito) obj;
+		if (cDistrito != other.cDistrito)
+			return false;		
+		return true;
+	}
+
+	
 	
 }
