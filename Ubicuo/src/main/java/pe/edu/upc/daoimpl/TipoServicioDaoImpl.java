@@ -36,7 +36,7 @@ public class TipoServicioDaoImpl implements ITipoServicioDao
 		List<TipoServicio> lista = new ArrayList<TipoServicio>();
 		try 
 		{
-			Query q = em.createQuery("Select tis form TipoServicio tis");
+			Query q = em.createQuery("Select tis from TipoServicio tis");
 			lista = (List<TipoServicio>) q.getResultList();
 		} 
 		catch (Exception e) 

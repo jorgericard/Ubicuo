@@ -36,7 +36,7 @@ public class EstadosDaoImpl implements IEstadosDao
 		List<Estados> lista = new ArrayList<Estados>();
 		try 
 		{
-			Query q = em.createQuery("Select es form Estados es");
+			Query q = em.createQuery("Select es from Estados es");
 			lista = (List<Estados>) q.getResultList();
 		} 
 		catch (Exception e) 

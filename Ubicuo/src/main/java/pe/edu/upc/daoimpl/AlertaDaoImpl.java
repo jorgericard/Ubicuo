@@ -36,7 +36,7 @@ public class AlertaDaoImpl implements IAlertaDao
 		List<Alerta> lista = new ArrayList<Alerta>();
 		try 
 		{
-			Query q = em.createQuery("Select al form Botones al");
+			Query q = em.createQuery("Select al from Botones al");
 			lista = (List<Alerta>) q.getResultList();
 		} 
 		catch (Exception e) 
