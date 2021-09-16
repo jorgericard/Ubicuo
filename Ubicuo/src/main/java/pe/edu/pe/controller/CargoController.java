@@ -20,14 +20,14 @@ public class CargoController
 	
 	//ATRIBUTOS
 	private Cargo cargo;
-	private List<Cargo> listacargo;
+	List<Cargo> listacargo;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.cargo=new Cargo();
-		this.listacargo=new ArrayList<Cargo>();
+		cargo=new Cargo();
+		listacargo=new ArrayList<Cargo>();
 	}
 	
 	//METODOS PERSONALIZADOS

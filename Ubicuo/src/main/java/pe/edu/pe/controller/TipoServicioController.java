@@ -20,14 +20,14 @@ public class TipoServicioController
 	
 	//ATRIBUTOS
 	private TipoServicio tiposervicio;
-	private List<TipoServicio> listatiposervicio;
+	List<TipoServicio> listatiposervicio;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.tiposervicio=new TipoServicio();
-		this.listatiposervicio=new ArrayList<TipoServicio>();
+		tiposervicio=new TipoServicio();
+		listatiposervicio=new ArrayList<TipoServicio>();
 	}
 	
 	//METODOS PERSONALIZADOS

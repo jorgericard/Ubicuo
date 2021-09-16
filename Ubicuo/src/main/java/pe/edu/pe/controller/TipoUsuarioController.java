@@ -20,14 +20,14 @@ public class TipoUsuarioController
 	
 	//ATRIBUTOS
 	private TipoUsuario tipousuario;
-	private List<TipoUsuario> listatipousuario;
+	List<TipoUsuario> listatipousuario;
 	
 	//CONSTRUCTOR
 	@PostConstruct
 	public void init()
 	{
-		this.tipousuario=new TipoUsuario();
-		this.listatipousuario=new ArrayList<TipoUsuario>();
+		tipousuario=new TipoUsuario();
+		listatipousuario=new ArrayList<TipoUsuario>();
 	}
 	
 	//METODOS PERSONALIZADOS
