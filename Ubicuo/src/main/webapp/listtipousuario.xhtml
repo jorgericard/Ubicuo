@@ -5,14 +5,14 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="listtipousuario.xhtml">
+<ui:composition template="master.xhtml">
 
 	<ui:define name="title">
         .:Listado de tipousuario:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>tipousuario </span>
+		<span>Tipousuario </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -20,7 +20,7 @@
 		<h:form>
 			<div class="row">
 				<p:commandButton value="Nuevo"
-					action="#{tipousuarioController.newtipousuario()}"
+					action="#{tipoUsuarioController.newTipoUsuario()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
 
@@ -29,20 +29,20 @@
 					<div class="form-group table-responsive box-table-class">
 
 						<p:dataTable id="lsttipousuario" var="c"
-							value="#{tipousuarioController.listatipousuario}"
+							value="#{tipoUsuarioController.listatipousuario}"
 							paginator="true" paginatorPosition="top"
 							rowsPerPageTemplate="10,20,30,40,50" rows="10"
 							styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{c.Ctipousuario}">
-								<h:outputText value="#{c.Ctipousuario}" />
+							<p:column headerText="Id" sortBy="#{c.ctipousuario}">
+								<h:outputText value="#{c.ctipousuario}" />
 							</p:column>
 
 							<p:column headerText="tipousuario"
-								sortBy="#{c.nombretipousuario}">
-								<h:outputText value="#{c.nombretipousuario}" />
+								sortBy="#{c.nnombretipo}">
+								<h:outputText value="#{c.nnombretipo}" />
 							</p:column>
 							
 

@@ -22,7 +22,6 @@ public class DistritoServiceImpl implements IDistritoService
 		// TODO Auto-generated method stub
 		diDao.insert(di);
 	}
-
 	@Override
 	public List<Distrito> list() {
 		// TODO Auto-generated method stub

@@ -5,10 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-
-
 <ui:composition template="master.xhtml">
-
 
 	<ui:define name="title">
         .:Listado de Estados:.
@@ -31,19 +28,20 @@
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
 
-						<p:dataTable id="lstEstado" var="p"
-							value="#{personController.listaEstado}" paginator="true"
-							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
-							rows="10" styleClass="table table-bordered"
+						<p:dataTable id="lstEstado" var="c"
+							value="#{estadosController.listaestados}" 
+							paginator="true" paginatorPosition="top" 
+							rowsPerPageTemplate="10,20,30,40,50" rows="10" 
+							styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{p.cestados}">
-								<h:outputText value="#{p.cestados}" />
+							<p:column headerText="Id" sortBy="#{c.cestados}">
+								<h:outputText value="#{c.cestados}" />
 							</p:column>
 
-							<p:column headerText="Estados" sortBy="#{p.nnombreestados}">
-								<h:outputText value="#{p.nnmobreestados}" />
+							<p:column headerText="Estados" sortBy="#{c.nnombreestados}">
+								<h:outputText value="#{c.nnombreestados}" />
 							</p:column>
 
 						</p:dataTable>

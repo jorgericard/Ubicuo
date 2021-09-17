@@ -28,13 +28,14 @@ public class TipoServicioController
 	{
 		tiposervicio=new TipoServicio();
 		listatiposervicio=new ArrayList<TipoServicio>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newTipoServicio() 
 	{
         this.setTiposervicio(new TipoServicio());
-        return "vaccination.xhtml";
+        return "TipoServicio.xhtml";
     }
 
     public void insert() 

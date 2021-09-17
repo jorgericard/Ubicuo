@@ -28,13 +28,14 @@ public class EstadosController
 	{
 		estados=new Estados();
 		listaestados=new ArrayList<Estados>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newEstado() 
 	{
         this.setEstados(new Estados());
-        return "vaccination.xhtml";
+        return "estados.xhtml";
     }
 
     public void insert() 

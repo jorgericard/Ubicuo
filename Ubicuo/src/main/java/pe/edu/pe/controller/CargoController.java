@@ -28,13 +28,14 @@ public class CargoController
 	{
 		cargo=new Cargo();
 		listacargo=new ArrayList<Cargo>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newCargo() 
 	{
         this.setCargo(new Cargo());
-        return "vaccination.xhtml";
+        return "cargo.xhtml";
     }
 
     public void insert() 
