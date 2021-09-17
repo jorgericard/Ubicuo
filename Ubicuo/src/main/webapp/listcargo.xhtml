@@ -5,7 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="listcargo.xhtml">
+<ui:composition template="master.xhtml">
 
 	<ui:define name="title">
         .:Listado de cargo:.
@@ -20,7 +20,7 @@
 		<h:form>
 			<div class="row">
 				<p:commandButton value="Nuevo"
-					action="#{cargoController.newcargo()}"
+					action="#{cargoController.newCargo()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
 
@@ -36,13 +36,13 @@
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{c.Ccargo}">
-								<h:outputText value="#{c.Ccargo}" />
+							<p:column headerText="Id" sortBy="#{c.ccargo}">
+								<h:outputText value="#{c.ccargo}" />
 							</p:column>
 
 							<p:column headerText="cargo"
-								sortBy="#{c.nombrecargo}">
-								<h:outputText value="#{c.nombrecargo}" />
+								sortBy="#{c.nnombrecargo}">
+								<h:outputText value="#{c.nnombrecargo}" />
 							</p:column>
 							
 

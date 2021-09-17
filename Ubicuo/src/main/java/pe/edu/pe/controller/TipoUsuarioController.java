@@ -28,13 +28,14 @@ public class TipoUsuarioController
 	{
 		tipousuario=new TipoUsuario();
 		listatipousuario=new ArrayList<TipoUsuario>();
+		list();
 	}
 	
 	//METODOS PERSONALIZADOS
 	public String newTipoUsuario() 
 	{
         this.setTipousuario(new TipoUsuario());
-        return "vaccination.xhtml";
+        return "tipousuario.xhtml";
     }
 
     public void insert() 

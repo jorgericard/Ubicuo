@@ -28,7 +28,6 @@ public class UbicacionController
 	{
 		ubicacion=new Ubicacion();
 		listaubicacion=new ArrayList<Ubicacion>();
-		
 		list();
 	}
 	
@@ -36,7 +35,7 @@ public class UbicacionController
 	public String newUbicacion() 
 	{
         this.setUbicacion(new Ubicacion());
-        return "vaccination.xhtml";
+        return "ubicacion.xhtml";
     }
 
     public void insert() 
