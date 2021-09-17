@@ -12,34 +12,30 @@
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>tipousuario</span>
+		<span>Tipousuario</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
 			<h:outputLabel for="ctipousuario" value="Id"
 				styleClass="control-label" />
-
 			<p:inputText autocomplete="off" id="ctipousuario"
 				styleClass="form-control"
-				value="#{tipousuarioController.tipousuario.Ctipousuario}" required="true" />
-
-
-
+				value="#{tipoUsuarioController.tipousuario.ctipousuario}" required="true" />
 
 			<h:outputLabel for="nombretipousuario" value="Nombre tipousuario"
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="nombretipousuario" styleClass="form-control"
-				value="#{tipousuarioController.tipousuario.nametipousuario}" maxlength="45"
+				value="#{tipoUsuarioController.tipousuario.nnombretipo}" maxlength="45"
 				required="true" />
 
-
+			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{tipousuarioController.insert()}"
+				actionListener="#{tipoUsuarioController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listPerson?faces-redirect=true" />
+				action="listtipousuario?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listPerson?faces-redirect=true" immediate="true"
+				action="listtipousuario?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 

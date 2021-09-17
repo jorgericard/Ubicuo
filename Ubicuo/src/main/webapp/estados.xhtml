@@ -17,43 +17,27 @@
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="cestados" value="Estados"
+			<h:outputLabel for="cestados" value="Id"
 				styleClass="control-label" />
-
 			<p:inputText autocomplete="off" id="cestados"
 				styleClass="form-control"
-				value="#{EstadosController.estado.cestados}" required="true" />
-
-
-
-			<h:outputLabel for="nnombreestados" value="Nombre de Estado"
-				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="nnombreestados" styleClass="form-control"
-				value="#{EstadosController.estado.nnombreestados}" maxlength="45"
+				value="#{estadosController.estados.cestados}"
 				required="true" />
+				
+			<h:outputLabel for="nnombreestados" value="Nombre de Estado"
+				styleClass="control-label" />				
+			<p:inputText autocomplete="off" id="nnombreestados"
+				styleClass="form-control"
+				value="#{estadosController.estados.nnombreestados}" 
+				maxlength="30" required="true" />
 			<br />
-
-			<h:outputLabel for="cestados" value="Estados"
-				styleClass="control-label" />
-			<p:selectOneMenu id="Estados"
-				value="#{EstadosController.estados.listaestados}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{EstdosController.listaestados}" var="v"
-					itemLabel="#{v.nnombreestados}" itemValue="#{v}" />
-
-			</p:selectOneMenu>
-
-
-			<br />
-
-
 
 			<p:commandButton value="Grabar"
-				actionListener="#{personController.insertPerson()}"
+				actionListener="#{estadosController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listPerson?faces-redirect=true" />
+				action="listEstados?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listPerson?faces-redirect=true" immediate="true"
+				action="listEstados?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 

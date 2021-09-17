@@ -19,27 +19,23 @@
 		<h:form>
 			<h:outputLabel for="ccargo" value="Id"
 				styleClass="control-label" />
-
 			<p:inputText autocomplete="off" id="ccargo"
 				styleClass="form-control"
-				value="#{cargoController.cargo.Ccargo}" required="true" />
-
-
-
+				value="#{cargoController.cargo.ccargo}" required="true" />
 
 			<h:outputLabel for="nombrecargo" value="Nombre cargo"
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="nombrecargo" styleClass="form-control"
-				value="#{cargoController.cargo.namecargo}" maxlength="45"
+				value="#{cargoController.cargo.nnombrecargo}" maxlength="45"
 				required="true" />
 
-
+			<br />
 			<p:commandButton value="Grabar"
 				actionListener="#{cargoController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listPerson?faces-redirect=true" />
+				action="listcargo?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listPerson?faces-redirect=true" immediate="true"
+				action="listcargo?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 

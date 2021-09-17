@@ -34,7 +34,7 @@ public class DistritoController
 	//METODOS PERSONALIZADOS
 	public String newDistrito() {
 		this.setDistrito(new Distrito());
-		return "vaccination.xhtml";
+		return "distrito.xhtml";
 	}
 	
 	public void insert() {
