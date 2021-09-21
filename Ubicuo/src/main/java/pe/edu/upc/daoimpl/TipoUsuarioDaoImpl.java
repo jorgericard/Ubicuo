@@ -39,7 +39,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
 		try 
 		{
 			Query q = em.createQuery("Select tiu from TipoUsuario tiu");
-			lista = (List<TipoUsuario>) q.getResultList();
+			lista = (List<TipoUsuario>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

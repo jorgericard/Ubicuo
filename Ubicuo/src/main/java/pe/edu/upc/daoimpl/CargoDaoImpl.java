@@ -39,7 +39,7 @@ public class CargoDaoImpl implements ICargoDao
 		try 
 		{
 			Query q = em.createQuery("Select ca from Cargo ca");
-			lista = (List<Cargo>) q.getResultList();
+			lista = (List<Cargo>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{

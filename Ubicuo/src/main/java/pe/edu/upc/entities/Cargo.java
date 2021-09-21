@@ -60,7 +60,6 @@ public class Cargo
 		return Objects.hash(ccargo);
 	}
 
-	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
