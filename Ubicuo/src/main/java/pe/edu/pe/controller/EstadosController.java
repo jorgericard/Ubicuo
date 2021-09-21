@@ -64,4 +64,25 @@ public class EstadosController
 		this.listaestados = listaestados;
 	}
 	
+	public void eliminar(Estados estados) {
+		try {
+			esservice.eliminar(estados.getCestados());
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	
+	public void findByName() {
+		try {
+			if (estados.getNnombreestados().isEmpty()) {
+				this.list();
+			} else {
+
+				listaestados = this.esservice.finByNameEstados(this.getEstados());
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
 }

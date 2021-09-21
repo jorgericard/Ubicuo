@@ -47,5 +47,31 @@ public class EstadosDaoImpl implements IEstadosDao
 		}
 		return lista;
 	}
+	
+	@Transactional
+	@Override
+	public void eliminar(int Cestados) {
+		Estados med = new Estados();
+		try {
+			med = em.getReference(Estados.class, Cestados);
+			em.remove(med);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Estados> finByNameEstados(Estados es) {
+		// TODO Auto-generated method stub
+		List<Estados> lista = new ArrayList<Estados>();
+		try {
+			Query q = em.createQuery("from MedicCenter m where m.nameMedicCenter like ?1");
+			q.setParameter(1, "%" + es.getNnombreestados() + "%");
+			lista = (List<Estados>) q.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return lista;
+	}
 }
