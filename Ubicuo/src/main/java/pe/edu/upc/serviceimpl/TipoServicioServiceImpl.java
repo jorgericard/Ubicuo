@@ -29,4 +29,24 @@ public class TipoServicioServiceImpl implements ITipoServicioService
 		return tisDao.list();
 	}
 
+	@Override
+	public void delete(int idTipoServicio) {
+		// TODO Auto-generated method stub
+		tisDao.delete(idTipoServicio);
+		
+	}
+
+	@Override
+	public void update(TipoServicio tis) {
+		// TODO Auto-generated method stub
+		tisDao.update(tis);
+		
+	}
+
+	@Override
+	public List<TipoServicio> finByNameTipoServicio(TipoServicio tis) {
+		// TODO Auto-generated method stub
+		return tisDao.finByNameTipoServicio(tis);
+	}
+
 }

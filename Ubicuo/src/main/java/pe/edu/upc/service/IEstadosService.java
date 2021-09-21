@@ -9,4 +9,8 @@ public interface IEstadosService
 	public void insert(Estados es);
 	
 	List<Estados> list();
+	
+	public void eliminar(int Cestados);
+	
+	public List<Estados> finByNameEstados(Estados es);
 }
