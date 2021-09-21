@@ -29,10 +29,9 @@
 					<div class="form-group table-responsive box-table-class">
 
 						<p:dataTable id="lstEstado" var="c"
-							value="#{estadosController.listaestados}" 
-							paginator="true" paginatorPosition="top" 
-							rowsPerPageTemplate="10,20,30,40,50" rows="10" 
-							styleClass="table table-bordered"
+							value="#{estadosController.listaestados}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
@@ -43,7 +42,14 @@
 							<p:column headerText="Estados" sortBy="#{c.nnombreestados}">
 								<h:outputText value="#{c.nnombreestados}" />
 							</p:column>
-
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listaestados" value="Eliminar"
+									actionListener="#{estadosController.eliminar(c)}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listaestados" value="Modificar"
+									actionListener="#{estadosController.findByName(es)}" />
+							</p:column>
 						</p:dataTable>
 					</div>
 

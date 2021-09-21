@@ -28,5 +28,17 @@ public class EstadosServiceImpl implements IEstadosService
 		// TODO Auto-generated method stub
 		return esDao.list();
 	}
+
+	@Override
+	public void eliminar(int Cestados) {
+		// TODO Auto-generated method stub
+		esDao.eliminar(Cestados);
+	}
+
+	@Override
+	public List<Estados> finByNameEstados(Estados es) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

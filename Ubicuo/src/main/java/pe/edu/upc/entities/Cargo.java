@@ -72,5 +72,4 @@ public class Cargo
 		Cargo other = (Cargo) obj;
 		return ccargo == other.ccargo;
 	}
-	
 }
