@@ -49,6 +49,39 @@ public class TipoServicioController
         listatiposervicio = tisservice.list();
     }
     
+    public void delete(TipoServicio TServ) {
+
+    	tisservice.delete(TServ.getCtiposervicio());
+		list();
+	}
+    
+    public void update() {
+    	
+			tisservice.update(tiposervicio);
+			list();
+	}
+    
+    public String updateTServ(TipoServicio TServ) {
+		this.setTiposervicio(TServ);
+		return "TipoServicioUpdate.xhtml";
+	}
+    
+    public void clean() {
+		this.init();
+	}
+	public void findByName() {
+		try {
+			if (tiposervicio.getNnombretiposervicio().isEmpty()) {
+				this.list();
+			} else {
+
+				listatiposervicio = this.tisservice.finByNameTipoServicio(this.getTiposervicio());
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+    
 	//GETTERS AND SETTERS
 	public TipoServicio getTiposervicio() {
 		return tiposervicio;
