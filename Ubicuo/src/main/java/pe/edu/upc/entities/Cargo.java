@@ -1,5 +1,7 @@
 package pe.edu.upc.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -55,11 +57,7 @@ public class Cargo
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ccargo;
-		//result = prime * result + ((nnombretiposervicio == null) ? 0 : nnombretiposervicio.hashCode());
-		return result;
+		return Objects.hash(ccargo);
 	}
 
 	@Override
@@ -71,10 +69,7 @@ public class Cargo
 		if (getClass() != obj.getClass())
 			return false;
 		Cargo other = (Cargo) obj;
-		if (ccargo != other.ccargo)
-			return false;
-		
-		return true;
+		return ccargo == other.ccargo;
 	}
 	
 }

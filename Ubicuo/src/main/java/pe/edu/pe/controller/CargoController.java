@@ -21,15 +21,6 @@ public class CargoController
 	//ATRIBUTOS
 	private Cargo cargo;
 	List<Cargo> listacargo;
-	private String mensaje="error";
-	
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
 	
 	//CONSTRUCTOR
 	@PostConstruct
@@ -44,53 +35,13 @@ public class CargoController
 	public String newCargo() 
 	{
         this.setCargo(new Cargo());
-        return "Cargo.xhtml";
+        return "cargo.xhtml";
     }
-	
-	public String modifpre(Cargo ca)
-	{
-		this.setCargo(ca);;
-		return "CargoMod.xhtml";
-	}
 
     public void insert() 
     {
-    	try 
-    	{
-    		caservice.insert(cargo);
-            list();
-		} 
-    	catch (Exception e) 
-    	{
-    		e.getMessage();
-		}
-        
-    }
-    
-    public void eliminar(Cargo idca)
-    {
-    	try 
-    	{
-    		caservice.eliminar(idca.getCcargo());
-    		list();
-		} 
-    	catch (Exception e) 
-    	{
-    		e.getMessage();
-		}
-    }
-    
-    public void modificar()
-    {
-    	try 
-    	{
-    		caservice.modificar(this.cargo);;
-    		this.list();
-		} 
-    	catch (Exception e) 
-    	{
-    		e.getMessage();
-		}
+        caservice.insert(cargo);
+        list();
     }
 
     public void list() 

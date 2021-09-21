@@ -18,26 +18,14 @@ public class CargoServiceImpl implements ICargoService
 	private ICargoDao caDao;
 	
 	@Override
-	public void insert(Cargo ca) 
-	{
+	public void insert(Cargo ca) {
+		// TODO Auto-generated method stub
 		caDao.insert(ca);
 	}
-	
-	@Override
-	public void eliminar(int idca) 
-	{
-		caDao.eliminar(idca);
-	}
 
 	@Override
-	public void modificar(Cargo ca) 
-	{
-		caDao.modificar(ca);
-	}
-
-	@Override
-	public List<Cargo> list() 
-	{
+	public List<Cargo> list() {
+		// TODO Auto-generated method stub
 		return caDao.list();
 	}
 

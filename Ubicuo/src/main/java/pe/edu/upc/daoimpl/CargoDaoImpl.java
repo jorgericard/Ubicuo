@@ -31,37 +31,6 @@ public class CargoDaoImpl implements ICargoDao
 		}
 	}
 
-	@Transactional
-	@Override
-	public void eliminar(int idca) 
-	{
-		Cargo ca = new Cargo();
-		try 
-		{
-			ca = em.getReference(Cargo.class, idca);
-			em.remove(ca);
-		} 
-		catch (Exception e) 
-		{
-			System.out.println(e.getMessage());
-		}
-		
-	}
-
-	@Transactional
-	@Override
-	public void modificar(Cargo ca) 
-	{
-		try 
-		{
-			em.merge(ca);
-		} 
-		catch (Exception e) 
-		{
-			System.out.println(e.getMessage());
-		}
-	}
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cargo> list() 
@@ -78,6 +47,5 @@ public class CargoDaoImpl implements ICargoDao
 		}
 		return lista;
 	}
-
 
 }

@@ -3,60 +3,59 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"> <ui:composition
-	template="master.xhtml">
+	xmlns:p="http://primefaces.org/ui">
 
+<ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Listado Cargos:.
+        .:Listado de cargo:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Cargos </span>
+		<span>cargo </span>
 	</ui:define>
 
 	<ui:define name="content">
 
 		<h:form>
-			<div class="row"> <div class="col-sm-4"> <div
-				class="form-group"> <p:commandButton value="Nuevo"
-				action="#{cargoController.newCargo()}"
-				styleClass="btn btn-primary" ajax="false" /> </div> </div> </div>
+			<div class="row">
+				<p:commandButton value="Nuevo"
+					action="#{cargoController.newCargo()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
 
-			<div class="row"> <div class="col-sm-12"> <div
-				class="form-group table-responsive box-table-class"> <p:dataTable
-				id="listacargo" var="s"
-				value="#{cargoController.listacargo}" paginator="true"
-				paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
-				rows="10" styleClass="table table-bordered"
-				emptyMessage="No existen registros" rowIndexVar="item"
-				style="margin-bottom:0">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
 
-				<p:column headerText="Id" sortBy="#{s.ccargo}">
-					<h:outputText value="#{s.ccargo}" />
-				</p:column>
+						<p:dataTable id="lstcargo" var="c"
+							value="#{cargoController.listacargo}"
+							paginator="true" paginatorPosition="top"
+							rowsPerPageTemplate="10,20,30,40,50" rows="10"
+							styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
 
-				<p:column headerText="Nombre" sortBy="#{s.nnombrecargo}">
-					<h:outputText value="#{s.nnombrecargo}" />
-				</p:column>
+							<p:column headerText="Id" sortBy="#{c.ccargo}">
+								<h:outputText value="#{c.ccargo}" />
+							</p:column>
 
-				<p:column headerText="Operación" exportable="false">
-					<h:commandLink action="listacargo" value="Eliminar"
-						actionListener="#{cargoController.eliminar(s)}"></h:commandLink>
-				</p:column>
-				
-				<p:column headerText="Operación" exportable="false">
+							<p:column headerText="cargo"
+								sortBy="#{c.nnombrecargo}">
+								<h:outputText value="#{c.nnombrecargo}" />
+							</p:column>
+							
 
-					<h:commandLink value="Modificar"
-						action="#{cargoController.modifpre(s)}"
-						style="color:blue;" />
-				</p:column>
+						</p:dataTable>
+					</div>
 
-			</p:dataTable> </div> </div> </div>
+				</div>
+			</div>
 		</h:form>
 	</ui:define>
 
 	<ui:define name="footerCont">
 
 	</ui:define>
-</ui:composition> </html>
+</ui:composition>
+</html>
