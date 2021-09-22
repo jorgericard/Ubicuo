@@ -48,5 +48,44 @@ public class UbicacionDaoImpl implements IUbicacionDao
 		}
 		return lista;
 	}
+	@Transactional
+	@Override
+	public void eliminar(int cUbicacion) {
+		// TODO Auto-generated method stub
+		Ubicacion ub = new Ubicacion();
+		try {
+			ub = em.getReference(Ubicacion.class, cUbicacion);
+			em.remove(ub);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	@Transactional
+	@Override
+	public void modificar(Ubicacion ubicacion) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(ubicacion);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Ubicacion> findByIdUbicacion(Ubicacion ubi) {
+		// TODO Auto-generated method stub
+		List<Ubicacion> lista=new ArrayList<Ubicacion>();
+		try {
+			Query q= em.createQuery("from Ubicacion c where c.cUbicacion like ?1");
+			q.setParameter(1, "%"+ ubi.getCUbicacion() + "%");
+			lista=(List<Ubicacion>)q.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return lista;
+	}
 
 }

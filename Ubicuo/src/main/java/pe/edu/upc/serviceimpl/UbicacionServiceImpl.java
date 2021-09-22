@@ -29,4 +29,22 @@ public class UbicacionServiceImpl implements IUbicacionService
 		return ubDao.list();
 	}
 
+	@Override
+	public void eliminar(int cUbicacion) {
+		// TODO Auto-generated method stub
+		ubDao.eliminar(cUbicacion);
+	}
+
+	@Override
+	public void modificar(Ubicacion ubicacion) {
+		// TODO Auto-generated method stub
+		ubDao.modificar(ubicacion);
+	}
+
+	@Override
+	public List<Ubicacion> findByIdUbicacion(Ubicacion ubi) {
+		// TODO Auto-generated method stub
+		return ubDao.findByIdUbicacion(ubi);
+	}
+
 }

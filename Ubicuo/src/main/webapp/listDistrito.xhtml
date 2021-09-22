@@ -18,10 +18,32 @@
 	<ui:define name="content">
 
 		<h:form>
+			
 			<div class="row">
-				<p:commandButton value="Nuevo"
-					action="#{distritoController.newDistrito()}"
-					styleClass="btn btn-primary" ajax="false" />
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel for="name" value="Búsqueda"
+							styleClass="control-label" />
+						<p:inputText autocomplete="off" id="name"
+							styleClass="form-control"
+							value="#{distritoController.distrito.nombredistrito}"
+							maxlength="120" />
+					</div>
+				</div>
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Limpiar" update="lstInfectoius"
+							actionListener="#{distritoController.clean()}"
+							styleClass="btn btn-default" ajax="false" />
+						<p:commandButton value="Buscar" update="lstDistrito"
+							actionListener="#{distritoController.findByName()}"
+							styleClass="btn btn-default btn-border" ajax="true" />
+						<p:commandButton value="Nuevo"
+							action="#{distritoController.newDistrito()}"
+							styleClass="btn btn-danger" ajax="false" />
+					</div>
+				</div>
 			</div>
 
 			<div class="row">
@@ -29,10 +51,9 @@
 					<div class="form-group table-responsive box-table-class">
 
 						<p:dataTable id="lstDistrito" var="c"
-							value="#{distritoController.listadistrito}"
-							paginator="true" paginatorPosition="top"
-							rowsPerPageTemplate="10,20,30,40,50" rows="10"
-							styleClass="table table-bordered"
+							value="#{distritoController.listadistrito}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
@@ -40,13 +61,32 @@
 								<h:outputText value="#{c.CDistrito}" />
 							</p:column>
 
-							<p:column headerText="Distrito"
-								sortBy="#{c.nombredistrito}">
+							<p:column headerText="Distrito" sortBy="#{c.nombredistrito}">
 								<h:outputText value="#{c.nombredistrito}" />
 							</p:column>
-							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listPowner" value="Eliminar"
+									actionListener="#{distritoController.eliminar(c)}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+
+								<h:commandLink value="Modificar"
+									action="#{distritoController.Modifpre(c)}" style="color:blue;" />
+							</p:column>
+
 
 						</p:dataTable>
+						<h:commandLink>
+							<p:outputLabel value="ExportarExcel"></p:outputLabel>
+							<p:dataExporter type="xls" target="lstDistrito" fileName="excelWeb"
+								pageOnly="false"></p:dataExporter>
+						</h:commandLink>
+
+						<br />
+						<h:commandLink>
+							<p:outputLabel value="ExportarPdf"></p:outputLabel>
+							<p:dataExporter type="pdf" target="lstDistrito" fileName="pdfWeb"></p:dataExporter>
+						</h:commandLink>
 					</div>
 
 				</div>

@@ -48,6 +48,39 @@ public class UbicacionController
     {
         listaubicacion = ubservice.list();
     }
+    public void clean() {
+		this.init();
+	}
+    public void findById() {
+    	try {
+			listaubicacion=this.ubservice.findByIdUbicacion(this.getUbicacion());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+    }
+    public void eliminar(Ubicacion ubicacion) {
+    	try {
+			ubservice.eliminar(ubicacion.getCUbicacion());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+    }
+    //modificar
+    public void modificar() {
+    	try {
+			ubservice.modificar(ubicacion);
+			list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+    }
+    public String Modifpre(Ubicacion ubicacion) {
+    	this.setUbicacion(ubicacion);
+    	return "ubicacionMod.xhtml";
+    }
 
 	//GETTERS AND SETTERS
 	public Ubicacion getUbicacion() {
