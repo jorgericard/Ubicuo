@@ -48,4 +48,45 @@ public class TipoServicioDaoImpl implements ITipoServicioDao
 		return lista;
 	}
 
+	@Transactional
+	@Override
+	public void delete(int idTipoServicio) {
+		// TODO Auto-generated method stub
+		TipoServicio TServ = new TipoServicio();
+		try {
+			TServ = em.getReference(TipoServicio.class, idTipoServicio);
+			em.remove(TServ);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	@Transactional
+	@Override
+	public void update(TipoServicio tis) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(tis);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TipoServicio> finByNameTipoServicio(TipoServicio tis) {
+		// TODO Auto-generated method stub
+		List<TipoServicio> lista = new ArrayList<TipoServicio>();
+		try {
+			Query q = em.createQuery("from TipoServicio T where T.nnombretiposervicio like ?1");
+			q.setParameter(1, "%" + tis.getNnombretiposervicio() + "%");
+			lista = (List<TipoServicio>) q.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return lista;
+	}
+
 }

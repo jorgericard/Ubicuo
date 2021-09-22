@@ -39,13 +39,12 @@ public class DistritoDaoImpl implements IDistritoDao
 		List<Distrito> lista = new ArrayList<Distrito>();
 		try 
 		{
-			Query q = em.createQuery("select c from Distrito c");
+			Query q = em.createQuery("Select di from Distrito di");
 			lista = (List<Distrito>)q.getResultList();
 		} 
 		catch (Exception e) 
 		{
-			// TODO: handle exception
-			
+			System.out.println("Error al insertar");
 		}
 		return lista;
 	}
