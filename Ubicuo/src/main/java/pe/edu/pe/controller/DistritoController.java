@@ -41,10 +41,46 @@ public class DistritoController
 		diservice.insert(distrito);
 		list();
 	}
+	public void eliminar(Distrito distrito) {
+		try {
+			diservice.eliminar(distrito.getCDistrito());
+			list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
 	
 	public void list() {
 		// TODO Auto-generated method stub
 		listadistrito= diservice.list();
+	}
+	public void clean() {
+		this.init();
+	}
+	public void findByName() {
+		try {
+			if (distrito.getNombredistrito().isEmpty()) {
+				this.list();
+			} else {
+				listadistrito=this.diservice.findByNameDistrito(this.getDistrito());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	//Modificar
+	public void modificar() {
+		try {
+			diservice.modificar(distrito);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	public String Modifpre(Distrito distrito) {
+		this.setDistrito(distrito);
+		return "distritoMod.xhtml";
 	}
 	//GETTERS AND SETTERS
 	public Distrito getDistrito() {

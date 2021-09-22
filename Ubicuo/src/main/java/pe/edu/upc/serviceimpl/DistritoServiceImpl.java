@@ -27,5 +27,22 @@ public class DistritoServiceImpl implements IDistritoService
 		// TODO Auto-generated method stub
 		return diDao.list();
 	}
+	
+	@Override
+	public void eliminar(int cDistrito) {
+		// TODO Auto-generated method stub
+		diDao.eliminar(cDistrito);
+	}
+	@Override
+	public void modificar(Distrito distrito) {
+		// TODO Auto-generated method stub
+		diDao.modificar(distrito);
+	}
+	@Override
+	public List<Distrito> findByNameDistrito(Distrito dis) {
+		// TODO Auto-generated method stub
+		
+		return diDao.findByNameDistrito(dis);
+	}
 
 }

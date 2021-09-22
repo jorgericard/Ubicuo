@@ -19,20 +19,40 @@
 
 		<h:form>
 			<div class="row">
-				<p:commandButton value="Nuevo"
-					action="#{ubicacionController.newUbicacion()}"
-					styleClass="btn btn-primary" ajax="false" />
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel for="name" value="Búsqueda"
+							styleClass="control-label" />
+						<p:inputNumber autocomplete="off" id="name"
+							styleClass="form-control"
+							value="#{ubicacionController.ubicacion.CUbicacion}"
+							maxlength="120" />
+					</div>
+				</div>
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Limpiar" update="lstInfectoius"
+							actionListener="#{ubicacionController.clean()}"
+							styleClass="btn btn-default" ajax="false" />
+						<p:commandButton value="Buscar" update="lstUbicacion"
+							actionListener="#{ubicacionController.findById()}"
+							styleClass="btn btn-default btn-border" ajax="true" />
+						<p:commandButton value="Nuevo"
+							action="#{ubicacionController.newUbicacion()}"
+							styleClass="btn btn-danger" ajax="false" />
+					</div>
+				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
 
-						<p:dataTable id="lstDistrito" var="u"
-							value="#{ubicacionController.listaubicacion}"
-							paginator="true" paginatorPosition="top"
-							rowsPerPageTemplate="10,20,30,40,50" rows="10"
-							styleClass="table table-bordered"
+						<p:dataTable id="lstUbicacion" var="u"
+							value="#{ubicacionController.listaubicacion}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
@@ -40,17 +60,35 @@
 								<h:outputText value="#{u.CUbicacion}" />
 							</p:column>
 
-							<p:column headerText="Latitud"
-								sortBy="#{u.nlatitud}">
+							<p:column headerText="Latitud" sortBy="#{u.nlatitud}">
 								<h:outputText value="#{u.nlatitud}" />
 							</p:column>
-							<p:column headerText="Longitud"
-								sortBy="#{u.nlongitud}">
+							<p:column headerText="Longitud" sortBy="#{u.nlongitud}">
 								<h:outputText value="#{u.nlongitud}" />
 							</p:column>
-							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listPowner" value="Eliminar"
+									actionListener="#{ubicacionController.eliminar(u)}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+
+								<h:commandLink value="Modificar"
+									action="#{ubicacionController.Modifpre(u)}" style="color:blue;" />
+							</p:column>
+
 
 						</p:dataTable>
+						<h:commandLink>
+							<p:outputLabel value="ExportarExcel"></p:outputLabel>
+							<p:dataExporter type="xls" target="lstUbicacion" fileName="excelWeb"
+								pageOnly="false"></p:dataExporter>
+						</h:commandLink>
+
+						<br />
+						<h:commandLink>
+							<p:outputLabel value="ExportarPdf"></p:outputLabel>
+							<p:dataExporter type="pdf" target="lstUbicacion" fileName="pdfWeb"></p:dataExporter>
+						</h:commandLink>
 					</div>
 
 				</div>

@@ -8,37 +8,46 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de  Distritos:.
+        .:Registro de  Ubicacion:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Distritos</span>
+		<span>Ubicacion</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="cdistrito" value="Id "
+			<h:outputLabel for="cubicacion" value="Id "
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="cdistrito"
+			<p:inputText autocomplete="off" id="cubicacion"
 				styleClass="form-control"
-				value="#{distritoController.distrito.CDistrito}"
+				value="#{ubicacionController.ubicacion.CUbicacion}"
 				required="true" />
-			<h:outputLabel for="nnombredistrito"
-				value="Nombre del distrito " styleClass="control-label" />
+			<h:outputLabel for="nlatitud"
+				value="Latitud " styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="nnombredistrito"
+			<p:inputText autocomplete="off" id="nlatitud"
 				styleClass="form-control"
-				value="#{distritoController.distrito.nombredistrito}"
+				value="#{ubicacionController.ubicacion.nlatitud}"
+				maxlength="30" required="true" />
+
+			<br />
+			<h:outputLabel for="nlongitud"
+				value="Longitud " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="nlongitud"
+				styleClass="form-control"
+				value="#{ubicacionController.ubicacion.nlongitud}"
 				maxlength="30" required="true" />
 
 			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{distritoController.insert()}"
+				actionListener="#{ubicacionController.modificar()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listDistrito?faces-redirect=true" />
+				action="listUbicacion?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listDistrito?faces-redirect=true" immediate="true"
+				action="listUbicacion?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 
