@@ -12,5 +12,7 @@ public interface IEstadosService
 	
 	public void eliminar(int Cestados);
 	
+	public void update(Estados es);
+	
 	public List<Estados> finByNameEstados(Estados es);
 }

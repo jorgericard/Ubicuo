@@ -74,4 +74,16 @@ public class EstadosDaoImpl implements IEstadosDao
 		}
 		return lista;
 	}
+
+	@Transactional
+	@Override
+	public void update(Estados es) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(es);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
 }

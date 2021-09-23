@@ -40,5 +40,11 @@ public class EstadosServiceImpl implements IEstadosService
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void update(Estados es) {
+		// TODO Auto-generated method stub
+		esDao.update(es);
+	}
 	
 }
