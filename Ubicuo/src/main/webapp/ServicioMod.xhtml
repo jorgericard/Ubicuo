@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"> <ui:composition
+	template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Servicio:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Servicio</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		
+			<h:outputLabel for="cservicio" value="Id"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="cservicio"
+				styleClass="form-control"
+				value="#{servicioController.servicio.cservicio}" required="true" />
+
+			<h:outputLabel for="nombreservicio" value="Nombre servicio"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombreservicio" styleClass="form-control"
+				value="#{servicioController.servicio.nnombreservicio}" maxlength="45"
+				required="true" />
+
+			<h:outputLabel for="nnumeroservicio" value="Numero servicio"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nnumeroservicio" styleClass="form-control"
+				value="#{servicioController.servicio.nnumeroservicio}" maxlength="45"
+				required="true" />
+				
+			<h:outputLabel for="tdireccionservicio" value="Direción servicio"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="tdireccionservicio" styleClass="form-control"
+				value="#{servicioController.servicio.tdireccionservicio}" maxlength="45"
+				required="true" />
+				
+			<h:outputLabel for="tiposervicio" value="Tipo servicio"
+				styleClass="control-label" />
+			<p:selectOneMenu id="tiposervicio"
+				value="#{servicioController.servicio.tiposervicio}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{servicioController.listatiposervicio}" var="m"
+					itemLabel="#{m.nnombretiposervicio}" itemValue="#{m}" />
+			</p:selectOneMenu>
+			
+			<h:outputLabel for="distrito" value="Distrito"
+				styleClass="control-label" />
+			<p:selectOneMenu id="distrito"
+				value="#{servicioController.servicio.distrito}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{servicioController.listadistrito}" var="n"
+					itemLabel="#{n.nombredistrito}" itemValue="#{n}" />
+			</p:selectOneMenu>
+
+			<p:commandButton value="Grabar"
+				actionListener="#{servicioController.modificar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listServicio?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listServicio?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+		
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition> </html>

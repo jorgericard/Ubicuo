@@ -53,6 +53,7 @@ public class Distrito
 		this.nombreDistrito = nombreDistrito;
 	}
 
+	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public int hashCode() {
 		final int prime = 31;
