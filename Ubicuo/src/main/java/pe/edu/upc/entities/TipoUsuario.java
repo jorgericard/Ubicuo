@@ -54,13 +54,16 @@ public class TipoUsuario
 		this.nnombretipo = nnombretipo;
 	}
 
+	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
-	public int hashCode() {
+	public int hashCode() 
+	{
 		return Objects.hash(ctipousuario);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) 
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)

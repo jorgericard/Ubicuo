@@ -49,7 +49,7 @@ public class CargoController
 	
 	public String modifpre(Cargo ca)
 	{
-		this.setCargo(ca);;
+		this.setCargo(ca);
 		return "CargoMod.xhtml";
 	}
 
