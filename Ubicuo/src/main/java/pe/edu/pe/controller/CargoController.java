@@ -44,7 +44,7 @@ public class CargoController
 	public String newCargo() 
 	{
         this.setCargo(new Cargo());
-        return "Cargo.xhtml";
+        return "cargo.xhtml";
     }
 	
 	public String modifpre(Cargo ca)
