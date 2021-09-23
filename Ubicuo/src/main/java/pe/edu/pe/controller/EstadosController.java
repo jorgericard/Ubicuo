@@ -13,55 +13,53 @@ import pe.edu.upc.service.IEstadosService;
 
 @Named
 @RequestScoped
-public class EstadosController 
-{
+public class EstadosController {
 	@Inject
 	private IEstadosService esservice;
-	
-	//ATRIBUTOS
+
+	// ATRIBUTOS
 	private Estados estados;
 	List<Estados> listaestados;
-	
-	//CONSTRUCTOR
+
+	// CONSTRUCTOR
 	@PostConstruct
-	public void init()
-	{
-		estados=new Estados();
-		listaestados=new ArrayList<Estados>();
+	public void init() {
+		estados = new Estados();
+		listaestados = new ArrayList<Estados>();
 		list();
 	}
+
+	// METODOS PERSONALIZADOS
+	public String newEstado() {
+		this.setEstados(new Estados());
+		return "estados.xhtml";
+	}
+
+	public void insert() {
+		esservice.insert(estados);
+		list();
+	}
+
+	public void list() {
+		listaestados = esservice.list();
+	}
 	
-	//METODOS PERSONALIZADOS
-	public String newEstado() 
-	{
-        this.setEstados(new Estados());
-        return "estados.xhtml";
-    }
-
-    public void insert() 
-    {
-        esservice.insert(estados);
-        list();
-    }
-
-    public void list() 
-    {
-        listaestados = esservice.list();
-    }
-    
-	//GETTERS AND SETTERS
-	public Estados getEstados() {
-		return estados;
-	}
-	public void setEstados(Estados estados) {
-		this.estados = estados;
+	public void clean() {
+		this.init();
 	}
 
-	public List<Estados> getListaestados() {
-		return listaestados;
+	public void update() {
+		try {
+			esservice.update(estados);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
 	}
-	public void setListaestados(List<Estados> listaestados) {
-		this.listaestados = listaestados;
+	
+	public String updateEstados(Estados es) {
+		this.setEstados(es);
+		return "estadosUpdate.xhtml";
 	}
 	
 	public void eliminar(Estados estados) {
@@ -72,7 +70,7 @@ public class EstadosController
 			e.getMessage();
 		}
 	}
-	
+
 	public void findByName() {
 		try {
 			if (estados.getNnombreestados().isEmpty()) {
@@ -84,5 +82,22 @@ public class EstadosController
 		} catch (Exception e) {
 			e.getMessage();
 		}
+	}
+
+	// GETTERS AND SETTERS
+	public Estados getEstados() {
+		return estados;
+	}
+
+	public void setEstados(Estados estados) {
+		this.estados = estados;
+	}
+
+	public List<Estados> getListaestados() {
+		return listaestados;
+	}
+
+	public void setListaestados(List<Estados> listaestados) {
+		this.listaestados = listaestados;
 	}
 }
