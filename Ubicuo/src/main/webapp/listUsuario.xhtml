@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<ui:composition template="master.xhtml">
+
+
+	<ui:define name="title">
+        .:Listado de Usuario:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Usuarios </span>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="row">
+				<p:commandButton value="Nuevo"
+					action="#{usuarioController.newUsuario()}"
+					styleClass="btn btn-danger" ajax="false" />
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+
+						<p:dataTable id="lstUsuario" var="p"
+							value="#{usuarioController.listaUsuarios}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{p.cUsuario}">
+								<h:outputText value="#{p.cUsuario}" />
+							</p:column>
+
+							<p:column headerText="Nombre Apellido" sortBy="#{p.nombreApellido}">
+								<h:outputText value="#{p.nombreApellido}" />
+							</p:column>
+
+							<p:column headerText="Contraseña" sortBy="#{p.contraseña}">
+								<h:outputText value="#{p.contraseña}" />
+							</p:column>
+
+							<p:column headerText="Correo" sortBy="#{p.correo}">
+								<h:outputText value="#{p.correo}" />
+							</p:column>
+							<p:column headerText="DNI" sortBy="#{p.dni}">
+								<h:outputText value="#{p.dni}" />
+							</p:column>
+
+
+							
+
+							<p:column headerText="Ubicacion"
+								sortBy="#{p.ubicacion.nlatitud}">
+								<h:outputText
+									value="#{p.ubicacion.nlatitud}" />
+							</p:column>
+							
+							<p:column headerText="Cargo"
+								sortBy="#{p.cargo.nnombrecargo}">
+								<h:outputText
+									value="#{p.cargo.nnombrecargo}" />
+							</p:column>
+							
+							<p:column headerText="TipoUsuario"
+								sortBy="#{p.tipousuario.nnombretipo}">
+								<h:outputText
+									value="#{p.tipousuario.nnombretipo}" />
+							</p:column>
+
+						</p:dataTable>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

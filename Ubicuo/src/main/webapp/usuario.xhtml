@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de  Usuario:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Usuario</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="cUsuario" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="cUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.cUsuario}" required="true" />
+				
+			<h:outputLabel for="nombreApellido" value="Nombre y Apellido "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="nombreApellido"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.nombreApellido}" maxlength="30"
+				required="true" />
+				
+			<h:outputLabel for="contraseña" value="Contraseña"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="contraseña"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.contraseña}" maxlength="30"
+				required="true" />
+				
+			<h:outputLabel for="correo" value="Correo"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="correo" styleClass="form-control"
+				value="#{usuarioController.usuario.correo}" maxlength="30"
+				required="true" />
+				
+			<h:outputLabel for="dni" value="Dni "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="dni" styleClass="form-control"
+				value="#{usuarioController.usuario.dni}" maxlength="30"
+				required="true" />
+			
+
+			<h:outputLabel for="ubicacion" value="Ubicacion"
+				styleClass="control-label" />
+			<p:selectOneMenu id="ubicacion"
+				value="#{usuarioController.usuario.ubicacion}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{usuarioController.listaUbicaciones}" var="n"
+					itemLabel="#{n.nlatitud}" itemValue="#{n}" />
+			</p:selectOneMenu>
+			<h:outputLabel for="cargo" value="Cargo"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cargo"
+				value="#{usuarioController.usuario.cargo}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{usuarioController.listaCargos}" var="n"
+					itemLabel="#{n.nnombrecargo}" itemValue="#{n}" />
+			</p:selectOneMenu>
+			<h:outputLabel for="tipousuario" value="TipoUsuario"
+				styleClass="control-label" />
+			<p:selectOneMenu id="tipousuario"
+				value="#{usuarioController.usuario.tipousuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{usuarioController.listaTipoUsuarios}" var="n"
+					itemLabel="#{n.nnombretipo}" itemValue="#{n}" />
+			</p:selectOneMenu>
+
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{usuarioController.insertUsuario()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listUsuario?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listUsuario?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

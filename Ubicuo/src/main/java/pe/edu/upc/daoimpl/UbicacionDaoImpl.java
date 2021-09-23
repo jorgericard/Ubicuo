@@ -38,7 +38,7 @@ public class UbicacionDaoImpl implements IUbicacionDao
 		List<Ubicacion> lista = new ArrayList<Ubicacion>();
 		try 
 		{
-			Query q = em.createQuery("Select ub form Ubicacion ub");
+			Query q = em.createQuery("Select ub from Ubicacion ub");
 			lista = (List<Ubicacion>)q.getResultList();
 		} 
 		catch (Exception e) 
@@ -71,20 +71,5 @@ public class UbicacionDaoImpl implements IUbicacionDao
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Ubicacion> findByIdUbicacion(Ubicacion ubi) {
-		// TODO Auto-generated method stub
-		List<Ubicacion> lista=new ArrayList<Ubicacion>();
-		try {
-			Query q= em.createQuery("from Ubicacion c where c.cUbicacion like ?1");
-			q.setParameter(1, "%"+ ubi.getCUbicacion() + "%");
-			lista=(List<Ubicacion>)q.getResultList();
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println(e.getMessage());
-		}
-		return lista;
-	}
 
 }

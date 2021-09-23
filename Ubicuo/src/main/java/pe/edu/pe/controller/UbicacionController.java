@@ -51,17 +51,11 @@ public class UbicacionController
     public void clean() {
 		this.init();
 	}
-    public void findById() {
-    	try {
-			listaubicacion=this.ubservice.findByIdUbicacion(this.getUbicacion());
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.getMessage();
-		}
-    }
+    
     public void eliminar(Ubicacion ubicacion) {
     	try {
 			ubservice.eliminar(ubicacion.getCUbicacion());
+			list();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
