@@ -14,5 +14,4 @@ public interface IUbicacionDao
 	
 	public void modificar(Ubicacion ubicacion);
 	
-	public List<Ubicacion> findByIdUbicacion(Ubicacion ubi);
 }
