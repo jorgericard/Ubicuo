@@ -47,8 +47,8 @@
 									actionListener="#{estadosController.eliminar(c)}" />
 							</p:column>
 							<p:column headerText="Operación" exportable="false">
-								<h:commandLink action="listaestados" value="Modificar"
-									actionListener="#{estadosController.findByName(es)}" />
+								<h:commandLink value="Modificar"
+									action="#{estadosController.updateEstados(c)}" style="color:blue;" />
 							</p:column>
 						</p:dataTable>
 					</div>

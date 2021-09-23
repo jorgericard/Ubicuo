@@ -52,6 +52,7 @@ public class Estados
 		this.nnombreestados = nnombreestados;
 	}
 
+	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public int hashCode() {
 		final int prime = 31;

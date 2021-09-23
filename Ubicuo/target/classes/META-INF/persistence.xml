@@ -11,7 +11,11 @@
 		<class>pe.edu.upc.entities.TipoServicio</class>
 		<class>pe.edu.upc.entities.TipoUsuario</class>
 		<class>pe.edu.upc.entities.Ubicacion</class>
+
 		<class>pe.edu.upc.entities.Usuario</class>
+
+		<class>pe.edu.upc.entities.Servicio</class>
+
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

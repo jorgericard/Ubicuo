@@ -53,6 +53,7 @@ public class Cargo
 		this.nnombrecargo = nnombrecargo;
 	}
 
+	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
 	public int hashCode() {
 		final int prime = 31;
