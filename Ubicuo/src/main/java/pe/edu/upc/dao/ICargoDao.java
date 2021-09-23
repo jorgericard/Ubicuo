@@ -8,6 +8,10 @@ public interface ICargoDao
 {
 	public void insert(Cargo ca);
 	
+	public void eliminar(int idca);
+	
+	public void modificar(Cargo ca);
+	
 	public List<Cargo> list();
 	
 }
