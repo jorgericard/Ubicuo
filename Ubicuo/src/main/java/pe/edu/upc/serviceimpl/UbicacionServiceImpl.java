@@ -41,10 +41,5 @@ public class UbicacionServiceImpl implements IUbicacionService
 		ubDao.modificar(ubicacion);
 	}
 
-	@Override
-	public List<Ubicacion> findByIdUbicacion(Ubicacion ubi) {
-		// TODO Auto-generated method stub
-		return ubDao.findByIdUbicacion(ubi);
-	}
 
 }
