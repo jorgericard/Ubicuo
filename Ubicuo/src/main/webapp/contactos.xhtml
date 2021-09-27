@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Contactos:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Contactos</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="cContactos" value="Id"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="cContactos"
+				styleClass="form-control"
+				value="#{contactosController.contactos.cContactos}" required="true" />
+
+			<h:outputLabel for="nombre" value="Nombre"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombre" styleClass="form-control"
+				value="#{contactosController.contactos.nombre}" maxlength="45"
+				required="true" />
+
+			<h:outputLabel for="numerotelef" value="Numero de Telefono"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="numerotelef" styleClass="form-control"
+				value="#{contactosController.contactos.numCelular}" maxlength="45"
+				required="true" />
+							
+			<h:outputLabel for="usuario" value="Usuario"
+				styleClass="control-label" />
+			<p:selectOneMenu id="usuario"
+				value="#{contactosController.contactos.usuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{contactosController.listaUsuarios}" var="m"
+					itemLabel="#{m.nombreApellido}" itemValue="#{m}" />
+			</p:selectOneMenu>
+
+			
+			
+			<p:commandButton value="Grabar"
+				actionListener="#{contactosController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listContactos?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listContactos?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
