@@ -9,7 +9,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITipoUsuarioDao;
-import pe.edu.upc.entities.TipoServicio;
 import pe.edu.upc.entities.TipoUsuario;
 
 public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
