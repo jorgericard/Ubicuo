@@ -15,6 +15,7 @@
 		<class>pe.edu.upc.entities.Usuario</class>
 
 		<class>pe.edu.upc.entities.Servicio</class>
+		<class>pe.edu.upc.entities.Alerta</class>
 
 		<properties>
 			<property

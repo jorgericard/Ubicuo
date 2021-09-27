@@ -8,53 +8,52 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IServicioDao;
-import pe.edu.upc.entities.Servicio;
+import pe.edu.upc.dao.IAlertaDao;
+import pe.edu.upc.entities.Alerta;
 
-public class ServicioDaoImpl implements IServicioDao
+public class AlertaDaoImpl implements IAlertaDao
 {
-	
+
 	@PersistenceContext(unitName="Ubicuo")
 	private EntityManager em;
 	
 	@Transactional
 	@Override
-	public void insert(Servicio se) 
+	public void insert(Alerta al) 
 	{
 		try 
 		{
-			em.persist(se);
+			em.persist(al);
 		} 
 		catch (Exception e) 
 		{
-			System.out.println("Error al insertar");
+			System.out.println("Error al insertar alerta");
 		}
 	}
-
+	
 	@Transactional
 	@Override
-	public void eliminar(int idse) 
+	public void eliminar(int idal) 
 	{
-		Servicio se = new Servicio();
+		Alerta al = new Alerta();
 		try 
 		{
-			se = em.getReference(Servicio.class, idse);
-			em.remove(se);
+			al = em.getReference(Alerta.class, idal);
+			em.remove(al);
 		} 
 		catch (Exception e) 
 		{
 			System.out.println(e.getMessage());
 		}
-		
 	}
-	
+
 	@Transactional
 	@Override
-	public void modificar(Servicio se) 
+	public void modificar(Alerta al) 
 	{
 		try 
 		{
-			em.merge(se);
+			em.merge(al);
 		} 
 		catch (Exception e) 
 		{
@@ -64,19 +63,19 @@ public class ServicioDaoImpl implements IServicioDao
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Servicio> list() 
+	public List<Alerta> list() 
 	{
-		List<Servicio> lista = new ArrayList<Servicio>();
+		List<Alerta> lista = new ArrayList<Alerta>();
 		try 
 		{
-			Query q = em.createQuery("Select se from Servicio se");
-			lista = (List<Servicio>) q.getResultList();
+			Query q = em.createQuery("Select a from Alerta a");
+			lista = (List<Alerta>) q.getResultList();
 		} 
 		catch (Exception e) 
 		{
-			System.out.println("Error al insertar" );
+			System.out.println("Error al insertar tabla de alerta");
 		}
 		return lista;
 	}
-
+	
 }

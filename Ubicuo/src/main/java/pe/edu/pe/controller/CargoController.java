@@ -64,7 +64,6 @@ public class CargoController
     	{
     		e.getMessage();
 		}
-        
     }
     
     public void eliminar(Cargo idca)
@@ -84,7 +83,7 @@ public class CargoController
     {
     	try 
     	{
-    		caservice.modificar(this.cargo);;
+    		caservice.modificar(this.cargo);
     		this.list();
 		} 
     	catch (Exception e) 

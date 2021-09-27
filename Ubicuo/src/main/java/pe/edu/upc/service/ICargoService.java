@@ -6,7 +6,7 @@ import pe.edu.upc.entities.Cargo;
 
 public interface ICargoService 
 {
-public void insert(Cargo ca);
+	public void insert(Cargo ca);
 	
 	public void eliminar(int idca);
 	
