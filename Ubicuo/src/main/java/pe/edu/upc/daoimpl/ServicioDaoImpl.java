@@ -74,7 +74,7 @@ public class ServicioDaoImpl implements IServicioDao
 		} 
 		catch (Exception e) 
 		{
-			System.out.println("Error al insertar" );
+			System.out.println("Error al insertar");
 		}
 		return lista;
 	}
