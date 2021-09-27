@@ -30,4 +30,18 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		return usDao.list();
 	}
 
+	@Override
+	public void delete(int idUsuario) {
+		// TODO Auto-generated method stub
+		usDao.delete(idUsuario);
+		
+	}
+
+	@Override
+	public void update(Usuario u) {
+		// TODO Auto-generated method stub
+		usDao.update(u);
+		
+	}
+
 }

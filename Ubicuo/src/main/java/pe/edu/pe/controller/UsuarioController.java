@@ -102,6 +102,23 @@ public class UsuarioController {
 		uService.insert(usuario);
 		this.listUsuario();
 	}
+	
+	public void delete(Usuario user) {
+
+    	uService.delete(user.getCusuario());
+		listUsuario();
+	}
+    
+    public void update() {
+    	
+    	uService.update(usuario);;
+    	listUsuario();
+	}
+    
+    public String updateUser(Usuario user) {
+		this.setUsuario(user);;
+		return "UsuarioUpdate.xhtml";
+	}
 
 	// GETTER SETTER
 	public Usuario getUsuario() {
