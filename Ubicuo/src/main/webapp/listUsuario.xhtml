@@ -57,8 +57,6 @@
 							<p:column headerText="DNI" sortBy="#{p.dni}">
 								<h:outputText value="#{p.dni}" />
 							</p:column>
-
-
 							
 
 							<p:column headerText="Ubicacion"
@@ -67,17 +65,24 @@
 									value="#{p.ubicacion.nlatitud}" />
 							</p:column>
 							
+							<p:column headerText="TipoUsuario"
+								sortBy="#{p.tipousuario.nnombretipo}">
+								<h:outputText
+									value="#{p.tipousuario.nnombretipo}" />
+							</p:column>
+							
+							<p:column headerText="Servicio"
+								sortBy="#{p.servicio.nnombreservicio}">
+								<h:outputText
+									value="#{p.servicio.nnombreservicio}" />
+							</p:column>
+							
 							<p:column headerText="Cargo"
 								sortBy="#{p.cargo.nnombrecargo}">
 								<h:outputText
 									value="#{p.cargo.nnombrecargo}" />
 							</p:column>
 							
-							<p:column headerText="TipoUsuario"
-								sortBy="#{p.tipousuario.nnombretipo}">
-								<h:outputText
-									value="#{p.tipousuario.nnombretipo}" />
-							</p:column>
 
 						</p:dataTable>
 					</div>
