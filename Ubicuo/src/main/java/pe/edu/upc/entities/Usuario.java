@@ -137,7 +137,7 @@ public class Usuario {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + cUsuario;
+		result = prime * result + cusuario;
 		return result;
 	}
 
@@ -150,7 +150,7 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (cUsuario != other.cUsuario)
+		if (cusuario != other.cusuario)
 			return false;
 
 		return true;
