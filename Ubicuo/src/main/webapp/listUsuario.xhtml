@@ -39,8 +39,8 @@
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{p.cUsuario}">
-								<h:outputText value="#{p.cUsuario}" />
+							<p:column headerText="Id" sortBy="#{p.cusuario}">
+								<h:outputText value="#{p.cusuario}" />
 							</p:column>
 
 							<p:column headerText="Nombre Apellido" sortBy="#{p.nombreApellido}">
@@ -57,8 +57,6 @@
 							<p:column headerText="DNI" sortBy="#{p.dni}">
 								<h:outputText value="#{p.dni}" />
 							</p:column>
-
-
 							
 
 							<p:column headerText="Ubicacion"
@@ -67,17 +65,35 @@
 									value="#{p.ubicacion.nlatitud}" />
 							</p:column>
 							
+							<p:column headerText="TipoUsuario"
+								sortBy="#{p.tipousuario.nnombretipo}">
+								<h:outputText
+									value="#{p.tipousuario.nnombretipo}" />
+							</p:column>
+							
+							<p:column headerText="Servicio"
+								sortBy="#{p.servicio.nnombreservicio}">
+								<h:outputText
+									value="#{p.servicio.nnombreservicio}" />
+							</p:column>
+							
 							<p:column headerText="Cargo"
 								sortBy="#{p.cargo.nnombrecargo}">
 								<h:outputText
 									value="#{p.cargo.nnombrecargo}" />
 							</p:column>
 							
-							<p:column headerText="TipoUsuario"
-								sortBy="#{p.tipousuario.nnombretipo}">
-								<h:outputText
-									value="#{p.tipousuario.nnombretipo}" />
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listPowner" value="Eliminar"
+									actionListener="#{usuarioController.delete(p)}" />
 							</p:column>
+							<p:column headerText="Operación" exportable="false">
+
+								<h:commandLink value="Modificar"
+									action="#{usuarioController.updateUser(p)}"
+									style="color:blue;" />
+							</p:column>
+							
 
 						</p:dataTable>
 					</div>

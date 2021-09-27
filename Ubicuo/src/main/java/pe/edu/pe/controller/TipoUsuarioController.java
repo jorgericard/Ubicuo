@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entities.TipoServicio;
 import pe.edu.upc.entities.TipoUsuario;
 import pe.edu.upc.service.ITipoUsuarioService;
 
@@ -49,6 +50,23 @@ public class TipoUsuarioController
         listatipousuario = tiuservice.list();
     }
 	
+    public void delete(TipoUsuario TUsur) {
+
+    	tiuservice.delete(TUsur.getCtipousuario());
+		list();
+	}
+    
+    public void update() {
+    	
+    		tiuservice.update(tipousuario);
+			list();
+	}
+    
+    public String updateTUser(TipoUsuario TUser) {
+		this.setTipousuario(TUser);
+		return "TipoUsuarioUpdate.xhtml";
+	}
+    
 	//GETTERS AND SETTERS
 	public TipoUsuario getTipousuario() 
 	{

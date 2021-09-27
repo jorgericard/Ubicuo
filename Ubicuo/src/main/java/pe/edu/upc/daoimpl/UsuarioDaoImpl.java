@@ -42,6 +42,30 @@ public class UsuarioDaoImpl implements IUsuarioDao{
 		}
 		return lista;
 	}
+
+	@Transactional
+	@Override
+	public void delete(int idUsuario) {
+		// TODO Auto-generated method stub
+		Usuario Usua = new Usuario();
+		try {
+			Usua = em.getReference(Usuario.class, idUsuario);
+			em.remove(Usua);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Transactional
+	@Override
+	public void update(Usuario u) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(u);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	
 	
 	

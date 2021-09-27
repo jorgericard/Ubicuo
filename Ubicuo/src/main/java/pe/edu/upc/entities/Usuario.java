@@ -15,7 +15,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cUsuario;
+	private int cusuario;
 	
 	@Column(name="nombreApellido",nullable=false, length=45)
 	private String nombreApellido;
@@ -31,7 +31,11 @@ public class Usuario {
 	private Ubicacion ubicacion;
 	
 	@ManyToOne
-	@JoinColumn(name="ccargo",nullable=false)
+	@JoinColumn(name="cservicio" ,nullable = true)
+	private Servicio servicio;
+	
+	@ManyToOne
+	@JoinColumn(name="ccargo",nullable=true)
 	private Cargo cargo;
 	
 	@ManyToOne
@@ -43,25 +47,26 @@ public class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Usuario(int cUsuario, String nombreApellido, String contraseña, String correo, String dni,
-			Ubicacion ubicacion, Cargo cargo, TipoUsuario tipousuario) {
+	public Usuario(int cusuario, String nombreApellido, String contraseña, String correo, String dni,
+			Ubicacion ubicacion, Servicio servicio, Cargo cargo, TipoUsuario tipousuario) {
 		super();
-		this.cUsuario = cUsuario;
+		this.cusuario = cusuario;
 		this.nombreApellido = nombreApellido;
 		this.contraseña = contraseña;
 		this.correo = correo;
 		this.dni = dni;
 		this.ubicacion = ubicacion;
+		this.servicio = servicio;
 		this.cargo = cargo;
 		this.tipousuario = tipousuario;
 	}
 
-	public int getcUsuario() {
-		return cUsuario;
+	public int getCusuario() {
+		return cusuario;
 	}
 
-	public void setcUsuario(int cUsuario) {
-		this.cUsuario = cUsuario;
+	public void setCusuario(int cusuario) {
+		this.cusuario = cusuario;
 	}
 
 	public String getNombreApellido() {
@@ -119,5 +124,15 @@ public class Usuario {
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
+	}
+	
+	
 	
 }
