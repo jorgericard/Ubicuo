@@ -44,7 +44,16 @@
 								sortBy="#{c.nnombretipo}">
 								<h:outputText value="#{c.nnombretipo}" />
 							</p:column>
-							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listPowner" value="Eliminar"
+									actionListener="#{tipoUsuarioController.delete(c)}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+
+								<h:commandLink value="Modificar"
+									action="#{tipoUsuarioController.updateTUser(c)}"
+									style="color:blue;" />
+							</p:column>
 
 						</p:dataTable>
 					</div>

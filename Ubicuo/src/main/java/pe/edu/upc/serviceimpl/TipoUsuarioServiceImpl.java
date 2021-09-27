@@ -29,4 +29,17 @@ public class TipoUsuarioServiceImpl implements ITipoUsuarioService
 		return tiuDao.list();
 	}
 
+	@Override
+	public void delete(int ctipousuario) {
+		// TODO Auto-generated method stub
+		tiuDao.delete(ctipousuario);
+	}
+
+	@Override
+	public void update(TipoUsuario tipousuario) {
+		// TODO Auto-generated method stub
+		tiuDao.update(tipousuario);
+	}
+	
+	
 }

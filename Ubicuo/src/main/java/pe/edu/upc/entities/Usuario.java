@@ -15,7 +15,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cUsuario;
+	private int cusuario;
 	
 	@Column(name="nombreApellido",nullable=false, length=45)
 	private String nombreApellido;
@@ -46,11 +46,11 @@ public class Usuario {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Usuario(int cUsuario, String nombreApellido, String contraseña, String correo, String dni,
+	
+	public Usuario(int cusuario, String nombreApellido, String contraseña, String correo, String dni,
 			Ubicacion ubicacion, Servicio servicio, Cargo cargo, TipoUsuario tipousuario) {
 		super();
-		this.cUsuario = cUsuario;
+		this.cusuario = cusuario;
 		this.nombreApellido = nombreApellido;
 		this.contraseña = contraseña;
 		this.correo = correo;
@@ -61,12 +61,12 @@ public class Usuario {
 		this.tipousuario = tipousuario;
 	}
 
-	public int getcUsuario() {
-		return cUsuario;
+	public int getCusuario() {
+		return cusuario;
 	}
 
-	public void setcUsuario(int cUsuario) {
-		this.cUsuario = cUsuario;
+	public void setCusuario(int cusuario) {
+		this.cusuario = cusuario;
 	}
 
 	public String getNombreApellido() {

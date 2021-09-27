@@ -49,6 +49,23 @@ public class TipoUsuarioController
         listatipousuario = tiuservice.list();
     }
 	
+    public void delete(TipoUsuario TUsur) {
+
+    	tiuservice.delete(TUsur.getCtipousuario());
+		list();
+	}
+    
+    public void update() {
+    	
+    		tiuservice.update(tipousuario);
+			list();
+	}
+    
+    public String updateTUser(TipoUsuario TUser) {
+		this.setTipousuario(TUser);
+		return "TipoUsuarioUpdate.xhtml";
+	}
+    
 	//GETTERS AND SETTERS
 	public TipoUsuario getTipousuario() 
 	{

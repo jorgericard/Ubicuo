@@ -48,4 +48,32 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao
 		return lista;
 	}
 
+	@Transactional
+	@Override
+	public void delete(int idTipoUsuario) {
+		// TODO Auto-generated method stub
+		TipoUsuario TServ = new TipoUsuario();
+		try {
+			TServ = em.getReference(TipoUsuario.class, idTipoUsuario);
+			em.remove(TServ);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	@Transactional
+	@Override
+	public void update(TipoUsuario tus) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(tus);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+
+	
 }
