@@ -31,7 +31,11 @@ public class Usuario {
 	private Ubicacion ubicacion;
 	
 	@ManyToOne
-	@JoinColumn(name="ccargo",nullable=false)
+	@JoinColumn(name="cservicio" ,nullable = true)
+	private Servicio servicio;
+	
+	@ManyToOne
+	@JoinColumn(name="ccargo",nullable=true)
 	private Cargo cargo;
 	
 	@ManyToOne
@@ -42,9 +46,9 @@ public class Usuario {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Usuario(int cUsuario, String nombreApellido, String contraseña, String correo, String dni,
-			Ubicacion ubicacion, Cargo cargo, TipoUsuario tipousuario) {
+			Ubicacion ubicacion, Servicio servicio, Cargo cargo, TipoUsuario tipousuario) {
 		super();
 		this.cUsuario = cUsuario;
 		this.nombreApellido = nombreApellido;
@@ -52,6 +56,7 @@ public class Usuario {
 		this.correo = correo;
 		this.dni = dni;
 		this.ubicacion = ubicacion;
+		this.servicio = servicio;
 		this.cargo = cargo;
 		this.tipousuario = tipousuario;
 	}
@@ -119,5 +124,15 @@ public class Usuario {
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
+	}
+	
+	
 	
 }

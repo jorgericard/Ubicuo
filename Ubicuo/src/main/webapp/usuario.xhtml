@@ -22,7 +22,7 @@
 			<p:inputText autocomplete="off" id="cUsuario"
 				styleClass="form-control"
 				value="#{usuarioController.usuario.cUsuario}" required="true" />
-				
+
 			<h:outputLabel for="nombreApellido" value="Nombre y Apellido "
 				styleClass="control-label" />
 
@@ -30,7 +30,7 @@
 				styleClass="form-control"
 				value="#{usuarioController.usuario.nombreApellido}" maxlength="30"
 				required="true" />
-				
+
 			<h:outputLabel for="contraseña" value="Contraseña"
 				styleClass="control-label" />
 
@@ -38,45 +38,54 @@
 				styleClass="form-control"
 				value="#{usuarioController.usuario.contraseña}" maxlength="30"
 				required="true" />
-				
-			<h:outputLabel for="correo" value="Correo"
-				styleClass="control-label" />
+
+			<h:outputLabel for="correo" value="Correo" styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="correo" styleClass="form-control"
 				value="#{usuarioController.usuario.correo}" maxlength="30"
 				required="true" />
-				
-			<h:outputLabel for="dni" value="Dni "
-				styleClass="control-label" />
+
+			<h:outputLabel for="dni" value="Dni " styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="dni" styleClass="form-control"
 				value="#{usuarioController.usuario.dni}" maxlength="30"
 				required="true" />
-			
+
 
 			<h:outputLabel for="ubicacion" value="Ubicacion"
 				styleClass="control-label" />
 			<p:selectOneMenu id="ubicacion"
 				value="#{usuarioController.usuario.ubicacion}"
 				converter="omnifaces.SelectItemsConverter">
+				<f:selectItem itemLabel="- Seleccione -" itemValue="" />
 				<f:selectItems value="#{usuarioController.listaUbicaciones}" var="n"
 					itemLabel="#{n.nlatitud}" itemValue="#{n}" />
-			</p:selectOneMenu>
-			<h:outputLabel for="cargo" value="Cargo"
-				styleClass="control-label" />
-			<p:selectOneMenu id="cargo"
-				value="#{usuarioController.usuario.cargo}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{usuarioController.listaCargos}" var="n"
-					itemLabel="#{n.nnombrecargo}" itemValue="#{n}" />
 			</p:selectOneMenu>
 			<h:outputLabel for="tipousuario" value="TipoUsuario"
 				styleClass="control-label" />
 			<p:selectOneMenu id="tipousuario"
 				value="#{usuarioController.usuario.tipousuario}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{usuarioController.listaTipoUsuarios}" var="n"
-					itemLabel="#{n.nnombretipo}" itemValue="#{n}" />
+				<f:selectItem itemLabel="- Seleccione -" itemValue="" />
+				<f:selectItems value="#{usuarioController.listaTipoUsuarios}"
+					var="n" itemLabel="#{n.nnombretipo}" itemValue="#{n}" />
+			</p:selectOneMenu>
+			<h:outputLabel for="servicio" value="Servicio"
+				styleClass="control-label" />
+			<p:selectOneMenu id="servicio"
+				value="#{usuarioController.usuario.servicio}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItem itemLabel="- Seleccione -" itemValue="" />
+				<f:selectItems value="#{usuarioController.listaservicio}"
+					var="n" itemLabel="#{n.nnombreservicio}" itemValue="#{n}" />
+			</p:selectOneMenu>
+			<h:outputLabel for="cargo" value="Cargo" styleClass="control-label" />
+			<p:selectOneMenu id="cargo"
+				value="#{usuarioController.usuario.cargo}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItem itemLabel="- Seleccione -" itemValue="" />
+				<f:selectItems value="#{usuarioController.listaCargos}" var="n"
+					itemLabel="#{n.nnombrecargo}" itemValue="#{n}" />
 			</p:selectOneMenu>
 
 			<br />
