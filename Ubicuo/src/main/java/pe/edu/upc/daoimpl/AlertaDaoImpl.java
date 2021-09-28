@@ -31,6 +31,36 @@ public class AlertaDaoImpl implements IAlertaDao
 		}
 	}
 	
+	@Transactional
+	@Override
+	public void eliminar(int idal) 
+	{
+		Alerta al=new Alerta();
+		try 
+		{
+			al = em.getReference(Alerta.class,idal);
+			em.remove(al);
+		} 
+		catch (Exception e) 
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Transactional
+	@Override
+	public void modificar(Alerta al) 
+	{
+		try 
+		{
+			em.merge(al);
+		} 
+		catch (Exception e) 
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Alerta> list() 

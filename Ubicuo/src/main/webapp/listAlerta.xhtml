@@ -60,7 +60,16 @@
 								<h:outputText value="#{s.ffecha}">
 									<f:convertDateTime pattern="dd-MM-yyyy HH:mm:ss" timeZone="UTC" />
 								</h:outputText>
-
+							</p:column>
+							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listaalerta" value="Eliminar"
+									actionListener="#{alertaController.eliminar(s)}"></h:commandLink>
+							</p:column>
+				
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink value="Modificar"
+									action="#{alertaController.Modfpre(s)}" style="color:blue;" />
 							</p:column>
 
 						</p:dataTable>

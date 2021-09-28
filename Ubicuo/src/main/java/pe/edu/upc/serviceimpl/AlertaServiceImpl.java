@@ -17,13 +17,27 @@ public class AlertaServiceImpl implements IAlertaService
 	@Inject
 	private IAlertaDao boDao;
 	
-	public void insert(Alerta al) {
-		// TODO Auto-generated method stub
+	@Override
+	public void insert(Alerta al) 
+	{
 		boDao.insert(al);
 	}
 
-	public List<Alerta> list() {
-		// TODO Auto-generated method stub
+	@Override
+	public void eliminar(int idal) 
+	{
+		boDao.eliminar(idal);
+	}
+
+	@Override
+	public void modificar(Alerta al) 
+	{
+		boDao.modificar(al);
+	}
+
+	@Override
+	public List<Alerta> list() 
+	{
 		return boDao.list();
 	}
 
