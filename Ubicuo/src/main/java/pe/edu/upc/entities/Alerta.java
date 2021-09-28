@@ -90,8 +90,30 @@ public class Alerta
 	public void setFfecha(Date ffecha) {
 		this.ffecha = ffecha;
 	}
-		
-	
-	
+
+	//SOURCE>GENERATE DASH CODE AND EQUALS
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + calerta;
+		//result = prime * result + ((nnombretiposervicio == null) ? 0 : nnombretiposervicio.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alerta other = (Alerta) obj;
+		if( calerta != other.calerta)
+			return false;
+		return true;
+	}
+
 	
 }

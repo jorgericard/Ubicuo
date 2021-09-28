@@ -60,29 +60,66 @@ public class AlertaController
 	}
 
 	//METODOS PERSONALIZADOS
-	public String newAlerta() {
+	public String newAlerta() 
+	{
 		this.setAlerta(new Alerta());
 		return "Alerta.xhtml";
 	}
+	
+	public String Modfpre(Alerta al)
+	{
+		this.setAlerta(al);
+		return "alertaMod.xhtml";
+	}
 
-	public void insert() {
+	public void insert() 
+	{
 		alservice.insert(alerta);
 		list();
 	}
+	
+	public void eliminar(Alerta al)
+	{
+		try 
+		{
+			alservice.eliminar(al.getCalerta());
+			list();
+		} 
+		catch (Exception e) 
+		{
+			e.getMessage();
+		}
+	}
+	
+	public void modificar()
+	{
+		try 
+		{
+			alservice.modificar(alerta);
+		} 
+		catch (Exception e) 
+		{
+			e.getMessage();
+		}
+	}
 
-	public void list() {
+	public void list() 
+	{
 		listaalerta = alservice.list();
 	}
 	
-	public void listUsuarioauxiliado() {
+	public void listUsuarioauxiliado() 
+	{
 		listaauxiliado = uaservice.list();
 	}
 	
-	public void listUsuariorescatista() {
+	public void listUsuariorescatista() 
+	{
 		listarescatista = urservice.list();
 	}
 	
-	public void listEstados() {
+	public void listEstados() 
+	{
 		listaestados = esservice.list();
 	}
 	

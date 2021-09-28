@@ -6,8 +6,12 @@ import pe.edu.upc.entities.Alerta;
 
 public interface IAlertaService 
 {
-	public void insert(Alerta al);
+public void insert(Alerta al);
 	
-	List<Alerta> list();
+	public void eliminar(int idal);
+	
+	public void modificar(Alerta al);
+	
+	public List<Alerta> list();
 	
 }
