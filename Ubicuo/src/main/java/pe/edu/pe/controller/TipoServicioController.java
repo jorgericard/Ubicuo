@@ -67,12 +67,8 @@ public class TipoServicioController {
 
 	public void findByName() {
 		try {
-			if (tiposervicio.getNnombretiposervicio().isEmpty()) {
-				this.list();
-			} else {
 
-				listatiposervicio = this.tisservice.finByNameTipoServicio(this.getTiposervicio());
-			}
+			listatiposervicio = this.tisservice.finByNameTipoServicio(this.getTiposervicio());
 		} catch (Exception e) {
 			e.getMessage();
 		}

@@ -90,6 +90,45 @@ public class Alerta
 	public void setFfecha(Date ffecha) {
 		this.ffecha = ffecha;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override

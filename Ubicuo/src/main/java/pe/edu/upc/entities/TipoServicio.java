@@ -52,6 +52,45 @@ public class TipoServicio
 	{
 		this.nnombretiposervicio = nnombretiposervicio;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	//SOURCE>GENERATE DASH CODE AND EQUALS
 	@Override
