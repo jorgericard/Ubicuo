@@ -80,8 +80,8 @@ public class TipoServicioDaoImpl implements ITipoServicioDao
 		// TODO Auto-generated method stub
 		List<TipoServicio> lista = new ArrayList<TipoServicio>();
 		try {
-			Query q = em.createQuery("from TipoServicio T where T.nnombretiposervicio like ?1");
-			q.setParameter(1, "%" + tis.getNnombretiposervicio() + "%");
+			Query q = em.createQuery("from TipoServicio T where T.ctiposervicio = ?1");
+			q.setParameter(1,tis.getCtiposervicio());
 			lista = (List<TipoServicio>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
